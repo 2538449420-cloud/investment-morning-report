@@ -4,7 +4,11 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 
 from lib.morning_report import (
     build_generation_prompt,
@@ -17,7 +21,6 @@ from lib.morning_report import (
 )
 
 
-ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 
 
