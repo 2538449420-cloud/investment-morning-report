@@ -1,0 +1,9 @@
+{
+  "state": "waiting_for_api_key",
+  "message": "发射器骨架已就绪，等待配置云端API密钥。",
+  "updated_at": "2026-06-22T08:42:00+08:00",
+  "report_date": "2026-06-22",
+  "host": "127.0.0.1",
+  "port": 4173,
+  "error": null
+}

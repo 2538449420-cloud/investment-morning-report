@@ -1,0 +1,60 @@
+name: 每日投资晨报
+
+on:
+  schedule:
+    # UTC 23:30 = 北京时间次日 07:30，为08:00发布预留生成和部署时间。
+    - cron: "30 23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: investment-morning-report
+  cancel-in-progress: false
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 读取项目
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 生成今日晨报
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4' }}
+        run: python launcher/generate_once.py
+
+      - name: 检查生成文件
+        run: python -c "import json; json.load(open('data/latest.json', encoding='utf-8')); print('latest.json valid')"
+
+      - name: 保存晨报历史
+        run: |
+          git config user.name "morning-report-bot"
+          git config user.email "morning-report-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "晨报：自动更新"
+          git push
+
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 打包在线阅读页面
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: 发布在线阅读页面
+        id: deployment
+        uses: actions/deploy-pages@v4

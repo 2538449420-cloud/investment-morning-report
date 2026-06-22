@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f4ee" />
+  <meta name="description" content="每天早上八点，用一篇晨报建立投资世界地图。" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%231e6148%22/><text x=%2232%22 y=%2243%22 text-anchor=%22middle%22 font-size=%2234%22 fill=%22white%22>晨</text></svg>" />
+  <title>投资晨报</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" data-view-link="today" aria-label="返回今日晨报">
+      <span class="brand-mark">晨</span>
+      <span>
+        <strong>投资晨报</strong>
+        <small>每天建立一点投资认知</small>
+      </span>
+    </a>
+
+    <div class="topbar-actions">
+      <button class="icon-button" id="font-button" type="button" aria-expanded="false" aria-controls="font-menu">Aa</button>
+      <div class="popover" id="font-menu" hidden>
+        <p>正文字号</p>
+        <div class="segmented" role="group" aria-label="选择正文字号">
+          <button type="button" data-font-size="small">小</button>
+          <button class="active" type="button" data-font-size="medium">中</button>
+          <button type="button" data-font-size="large">大</button>
+        </div>
+      </div>
+
+      <button class="icon-button" id="more-button" type="button" aria-label="更多操作" aria-expanded="false" aria-controls="more-menu">•••</button>
+      <div class="popover action-menu" id="more-menu" hidden>
+        <button type="button" id="print-button">打印或保存为 PDF</button>
+        <button type="button" id="word-button">导出 Word 草稿</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" id="view-today" data-view="today">
+      <div class="reader-shell">
+        <aside class="toc-panel" aria-label="晨报目录">
+          <p class="eyebrow">今日目录</p>
+          <nav id="toc">
+            <a class="active" href="#market">全球宏观</a>
+            <a href="#events">市场快讯</a>
+            <a href="#terms">投资名词</a>
+            <a href="#concept">重点概念</a>
+            <a href="#company">公司案例</a>
+            <a href="#question">思考题</a>
+            <a href="#tree">知识树</a>
+          </nav>
+          <div class="update-note">
+            <span class="status-dot"></span>
+            <span>每天 08:00 更新<br><small>北京时间</small></span>
+          </div>
+        </aside>
+
+        <article class="report" id="report-content">
+          <header class="report-hero">
+            <div class="report-meta">
+              <span class="verified-badge">✓ 已完成来源核验</span>
+              <time datetime="2026-06-21">2026年6月21日 · 星期日</time>
+            </div>
+            <h1>市场交易的，往往是现实与预期之间的差</h1>
+            <p class="lead">今天不急着判断消息是好是坏。先学会问：这件事，市场原本想到了吗？</p>
+            <div class="hero-footer">
+              <span>预计阅读 12 分钟</span>
+              <span>3条宏观 · 3条快讯</span>
+              <span>新增 7 个知识节点</span>
+            </div>
+          </header>
+
+          <section id="market" class="report-section">
+            <div class="section-heading"><span>01</span><h2>全球宏观</h2></div>
+            <p class="section-intro">先用3条信息确认大环境。这里不追逐每一次涨跌，只回答哪些力量正在影响资产定价。</p>
+            <div class="macro-list">
+              <article><span>美国</span><div><h3>美联储利率不变，但通胀约束仍在</h3><p>联邦基金利率目标区间维持3.5%—3.75%。如果降息预期继续后移，成长股估值仍可能承压。</p></div></article>
+              <article><span>中国</span><div><h3>6月LPR将在周一公布</h3><p>市场一致预计报价不变。真正值得观察的，是结果有没有预期差，以及政策是否释放新的方向。</p></div></article>
+              <article><span>全球</span><div><h3>能源供应风险溢价正在回落</h3><p>中东局势缓和压低油价，但运输、保险和产量恢复需要时间，通胀压力不会瞬间消失。</p></div></article>
+            </div>
+            <blockquote>宏观告诉我们风往哪里吹，快讯告诉我们今天谁先感受到了风。</blockquote>
+          </section>
+
+          <section id="events" class="report-section">
+            <div class="section-heading"><span>02</span><h2>今日市场快讯</h2></div>
+            <div class="flash-window"><span class="status-dot"></span>统计窗口：昨日08:00—今日08:00（北京时间）</div>
+
+            <div class="event-card flash-card">
+              <span class="event-index">1</span>
+              <div>
+                <div class="flash-title"><h3>霍尔木兹海峡通航预期增强</h3><time>07:10</time></div>
+                <p>供应恢复预期推动原油风险溢价下降，但船只仍面临许可、保险和航线恢复问题。</p>
+                <div class="impact-row"><span class="positive">可能受益</span><b>航空 · 化工 · 制造业</b></div>
+                <div class="impact-row"><span class="negative">可能承压</span><b>石油开采 · 高成本油田</b></div>
+                <p class="watch-point"><strong>观察点：</strong>油价已提前回落，后续要看真实通行量能否跟上预期。</p>
+                <a class="source-link" href="https://za.investing.com/news/commodities-news/oil-falls-as-supply-starts-moving-through-strait-of-hormuz-4336459" target="_blank" rel="noreferrer">查看报道 · Reuters</a>
+              </div>
+            </div>
+
+            <div class="event-card flash-card">
+              <span class="event-index">2</span>
+              <div>
+                <div class="flash-title"><h3>黄金承受强美元与避险降温压力</h3><time>06:35</time></div>
+                <p>美联储释放偏强硬信号，叠加中东风险缓和，黄金价格受到压制。</p>
+                <div class="impact-row"><span class="positive">可能受益</span><b>美元资产 · 部分风险资产</b></div>
+                <div class="impact-row"><span class="negative">可能承压</span><b>黄金 · 黄金矿业</b></div>
+                <p class="watch-point"><strong>观察点：</strong>避险下降只是一个变量，真实利率和央行购金仍会影响长期价格。</p>
+                <a class="source-link" href="https://www.brecorder.com/news/40426247" target="_blank" rel="noreferrer">查看报道 · Reuters</a>
+              </div>
+            </div>
+
+            <div class="event-card flash-card">
+              <span class="event-index">3</span>
+              <div>
+                <div class="flash-title"><h3>强美元继续影响跨境资产定价</h3><time>05:20</time></div>
+                <p>美元走强提高了美元资产吸引力，也增加部分非美元经济体的汇率与融资压力。</p>
+                <div class="impact-row"><span class="positive">可能受益</span><b>美元收入较高的出口企业</b></div>
+                <div class="impact-row"><span class="negative">可能承压</span><b>美元负债较高的企业</b></div>
+                <p class="watch-point"><strong>观察点：</strong>不能只看汇率方向，还要看公司收入与负债分别使用什么货币。</p>
+                <a class="source-link" href="https://www.fidelity.com/news/article/default/202606190459RTRSNEWSCOMBINED_L6N42R0AE_1" target="_blank" rel="noreferrer">查看报道 · Reuters</a>
+              </div>
+            </div>
+          </section>
+
+          <section id="terms" class="report-section">
+            <div class="section-heading"><span>03</span><h2>今日5个投资名词</h2></div>
+            <div class="term-grid">
+              <article><span>01</span><h3>一致预期</h3><p>市场参与者对某个数据或事件结果的普遍预测。它不是事实，也不保证正确。</p></article>
+              <article><span>02</span><h3>Price In</h3><p>事情还没正式发生，很多人已经据此买卖，价格提前发生变化。</p></article>
+              <article><span>03</span><h3>超预期</h3><p>实际结果与原先预测出现偏差。方向好坏要结合具体指标判断。</p></article>
+              <article><span>04</span><h3>风险溢价</h3><p>投资者因为承担不确定性而要求的额外回报。</p></article>
+              <article><span>05</span><h3>基点</h3><p>1个基点等于0.01个百分点。利率下降0.10个百分点，就是下降10个基点。</p></article>
+            </div>
+          </section>
+
+          <section id="concept" class="report-section">
+            <div class="section-heading"><span>04</span><h2>重点概念</h2></div>
+            <h3 class="big-question">为什么好消息公布后，股价反而可能下跌？</h3>
+            <p>假设一家公司的利润增长20%。单看数字，很不错。但如果市场此前预期增长30%，结果只有20%，投资者可能下调对未来的判断。</p>
+            <div class="vertical-flow">
+              <div><small>第一层</small><strong>过去发生了什么</strong></div>
+              <i></i>
+              <div><small>第二层</small><strong>市场原本预期什么</strong></div>
+              <i></i>
+              <div><small>第三层</small><strong>新信息改变了多少预期</strong></div>
+            </div>
+            <div class="concept-formula">
+              <small>今天顺手掌握一个公式</small>
+              <strong>预期差 = 实际结果 − 市场一致预期</strong>
+              <p>若市场预计1年期LPR为3.00%，实际是2.90%，结果就比预期低10个基点。但预期差只能描述偏离，不能自动判断股市涨跌。</p>
+            </div>
+            <p>只读新闻标题容易困惑。新闻告诉你结果，投资分析还要补问一句：这个结果与市场原来的剧本相比，有什么不同？</p>
+          </section>
+
+          <section id="company" class="report-section">
+            <div class="section-heading"><span>05</span><h2>真实公司案例</h2></div>
+            <div class="company-title">
+              <div class="company-logo">东航</div>
+              <div><h3>中国东航</h3><p>油价下跌为什么有帮助，却不保证马上盈利？</p></div>
+            </div>
+
+            <h3>它怎么赚钱？</h3>
+            <p>中国东航主要向个人和企业出售客运服务，也经营货运等业务。飞机起飞后，空座位不能留到明天再卖，所以航空座位是一种“会过期的库存”。</p>
+            <div class="inline-formula">客运收入 ≈ 可提供座位 × 客座率 × 平均票价</div>
+
+            <h3>真实数字告诉了我们什么？</h3>
+            <div class="metric-grid">
+              <div><small>2025年营业收入</small><strong>1,399.41亿元</strong><em>同比 +5.92%</em></div>
+              <div><small>全年承运旅客</small><strong>约1.5亿人次</strong><em>同比 +6.67%</em></div>
+              <div><small>飞机燃油成本</small><strong>436.90亿元</strong><em>同比 −3.98%</em></div>
+            </div>
+            <p>平均航空油价同比下降8.20%，减少航油成本约39.03亿元；但加油量增长4.60%，又增加成本约20.94亿元。</p>
+            <blockquote>“油价跌”只是一个变量，“用了多少油”是另一个变量。</blockquote>
+
+            <h3>商业模式的优势</h3>
+            <ul class="clean-list"><li>航线网络连接更多城市，方便中转；</li><li>枢纽机场时刻资源有限，具有稀缺性；</li><li>会员和企业客户有助于形成重复消费。</li></ul>
+
+            <h3>风险在哪里？</h3>
+            <ul class="clean-list danger"><li>固定成本和资本投入高；</li><li>油价与汇率并非公司能够控制；</li><li>票价、客座率和外部事件都可能影响利润。</li></ul>
+
+            <p>因此，核心并不是“油价跌就赚钱”，而是客流、票价、客座率、油价、汇率和固定成本能否同时形成有利组合。</p>
+            <div class="embedded-counterexample">
+              <small>反例 · 什么时候逻辑不成立？</small>
+              <h3>油价下跌也可能不是好消息</h3>
+              <p>如果油价下跌来自全球经济走弱，商务和旅游需求也可能下降。公司虽然少付燃油费，却可能失去更多收入。对石油生产企业，逻辑甚至完全相反。</p>
+            </div>
+            <a class="source-link" href="https://www.ceair.com/global/static/AboutChinaEasternAirlines/intoEasternAirlines/InvestorRelations/periodicReports/ShanghaiStockExchangeReleased/ShanghaiStockExchangeReleased2025/202604/P020260408479381018446.pdf" target="_blank" rel="noreferrer">查看公司2025年度报告</a>
+          </section>
+
+          <section id="question" class="report-section question-section">
+            <div class="section-heading"><span>06</span><h2>今日思考题</h2></div>
+            <p class="question">某公司公布利润增长20%，但股价在公告后下跌。下面哪个解释最合理？</p>
+            <div class="quiz" id="quiz">
+              <button type="button" data-answer="wrong"><b>A</b>利润增长对股价没有用</button>
+              <button type="button" data-answer="wrong"><b>B</b>市场一定在操纵股价</button>
+              <button type="button" data-answer="correct"><b>C</b>需要比较此前预期、利润质量和未来指引</button>
+            </div>
+            <div class="answer" id="answer" hidden></div>
+          </section>
+
+          <section id="tree" class="report-section">
+            <div class="section-heading"><span>07</span><h2>知识树：今日位置</h2></div>
+            <div class="tree-branch">
+              <strong>风险与决策</strong>
+              <div class="branch-level"><span>└──</span><strong>市场预期</strong></div>
+              <div class="branch-level child"><span>├──</span>一致预期</div>
+              <div class="branch-level child"><span>├──</span>Price In</div>
+              <div class="branch-level child today-node"><span>├──</span>预期差 <b>← 今日</b></div>
+              <div class="branch-level child"><span>└──</span>风险溢价</div>
+            </div>
+            <p>完整知识地图会在“知识树”页面按模块保存，这里只展示今天所在的位置。</p>
+          </section>
+
+          <footer class="disclaimer">
+            <strong>风险提示</strong>
+            <p>本文用于投资知识学习和信息交流，不构成任何投资建议。文中公司仅作为商业与财务分析案例。</p>
+            <p class="generated-at">生成于 2026年6月21日 08:00（北京时间）</p>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="view list-view" id="view-history" data-view="history">
+      <div class="page-header">
+        <p class="eyebrow">往期内容</p>
+        <h1>晨报档案</h1>
+        <p>按时间保存每一次学习，不追热点的热闹，只留下认知的积累。</p>
+      </div>
+      <div class="history-list">
+        <button class="history-card featured" type="button" data-open-today>
+          <time>6月21日 · 今天</time>
+          <h2>市场交易的，往往是现实与预期之间的差</h2>
+          <p>一致预期 · 风险溢价 · 中国东航</p>
+          <span>阅读晨报 →</span>
+        </button>
+        <article class="history-card sample">
+          <time>第2期 · 样稿</time>
+          <h2>利率决定钱往哪里流，商业模式决定钱能不能留下来</h2>
+          <p>ETF · 债券 · 贵州茅台</p>
+          <span>历史样稿</span>
+        </article>
+        <article class="history-card sample">
+          <time>第1期 · 样稿</time>
+          <h2>利率是资产价格的引力</h2>
+          <p>LPR · 真实利率 · 中国移动</p>
+          <span>历史样稿</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="view list-view" id="view-knowledge" data-view="knowledge">
+      <div class="page-header">
+        <p class="eyebrow">长期学习进度</p>
+        <h1>投资知识树</h1>
+        <p>不是每天孤立学一个词，而是慢慢看见它们如何连接。</p>
+      </div>
+      <div class="overall-progress">
+        <div><span>已接触知识节点</span><strong>28</strong></div>
+        <div class="progress-track"><span style="width: 36%"></span></div>
+        <small>知识地图完成约 36%</small>
+      </div>
+      <div class="knowledge-grid">
+        <article><div class="knowledge-icon">市</div><div><h2>市场与交易</h2><p>指数、ETF、主动基金、市场流动性</p><small>5个节点 · 入门</small></div></article>
+        <article><div class="knowledge-icon">宏</div><div><h2>宏观环境</h2><p>利率、LPR、通胀、真实利率、预期差</p><small>5个节点 · 入门</small></div></article>
+        <article><div class="knowledge-icon">商</div><div><h2>商业模式</h2><p>品牌、定价权、经营杠杆、成本转嫁</p><small>6个节点 · 入门</small></div></article>
+        <article><div class="knowledge-icon">表</div><div><h2>财务报表</h2><p>收入、利润、毛利率、净利率、ROE</p><small>5个节点 · 待展开</small></div></article>
+        <article><div class="knowledge-icon">估</div><div><h2>估值方法</h2><p>PE、EPS、PEG、PB、现金流折现</p><small>3个节点 · 入门</small></div></article>
+        <article><div class="knowledge-icon">险</div><div><h2>风险与决策</h2><p>分散、股息率、投资目标、能力圈</p><small>4个节点 · 入门</small></div></article>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="主导航">
+    <button class="active" type="button" data-view-target="today"><span>◉</span>今日</button>
+    <button type="button" data-view-target="history"><span>▤</span>往期</button>
+    <button type="button" data-view-target="knowledge"><span>⌘</span>知识树</button>
+  </nav>
+
+  <script src="./app.js"></script>
+</body>
+</html>

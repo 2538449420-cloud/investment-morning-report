@@ -1,0 +1,114 @@
+{
+  "report_date": "2026-06-21",
+  "theme": "市场交易的，往往是现实与预期之间的差",
+  "summary": "今天不急着判断消息是好是坏。先学会问：这件事，市场原本想到了吗？",
+  "macro": [
+    {
+      "region": "美国",
+      "title": "美联储利率不变，但通胀约束仍在",
+      "summary": "联邦基金利率目标区间维持3.5%—3.75%。",
+      "why_it_matters": "如果降息预期继续后移，成长股估值仍可能承压。",
+      "source_ids": ["s1"]
+    },
+    {
+      "region": "中国",
+      "title": "6月LPR将在周一公布",
+      "summary": "市场一致预计报价不变。",
+      "why_it_matters": "重点是结果是否出现预期差，以及政策是否释放新方向。",
+      "source_ids": ["s2"]
+    },
+    {
+      "region": "全球",
+      "title": "能源供应风险溢价正在回落",
+      "summary": "中东局势缓和压低油价。",
+      "why_it_matters": "运输、保险和产量恢复仍需时间，通胀压力不会瞬间消失。",
+      "source_ids": ["s3"]
+    }
+  ],
+  "market_flashes": [
+    {
+      "time_bjt": "07:10",
+      "title": "霍尔木兹海峡通航预期增强",
+      "summary": "供应恢复预期推动原油风险溢价下降，但船只仍面临许可、保险和航线恢复问题。",
+      "beneficiaries": ["航空", "化工", "制造业"],
+      "pressured": ["石油开采", "高成本油田"],
+      "watch_point": "油价已提前回落，后续要看真实通行量能否跟上预期。",
+      "source_ids": ["s3"]
+    },
+    {
+      "time_bjt": "06:35",
+      "title": "黄金承受强美元与避险降温压力",
+      "summary": "偏强硬的美联储信号叠加中东风险缓和，黄金价格受到压制。",
+      "beneficiaries": ["美元资产", "部分风险资产"],
+      "pressured": ["黄金", "黄金矿业"],
+      "watch_point": "真实利率和央行购金仍会影响黄金的长期价格。",
+      "source_ids": ["s4"]
+    },
+    {
+      "time_bjt": "05:20",
+      "title": "强美元继续影响跨境资产定价",
+      "summary": "美元走强提高美元资产吸引力，也增加部分非美元经济体的融资压力。",
+      "beneficiaries": ["美元收入较高的出口企业"],
+      "pressured": ["美元负债较高的企业"],
+      "watch_point": "需要同时观察公司的收入币种和负债币种。",
+      "source_ids": ["s5"]
+    }
+  ],
+  "terms": [
+    {"name": "一致预期", "english": "Consensus Expectation", "definition": "市场参与者对结果的普遍预测。", "connection": "它不是事实，也不保证正确。"},
+    {"name": "Price In", "english": "Priced In", "definition": "事情尚未发生，价格已经提前反应。", "connection": "用于理解好消息公布后为何可能不涨。"},
+    {"name": "超预期", "english": "Surprise", "definition": "实际结果偏离原先预测。", "connection": "方向好坏要结合具体指标。"},
+    {"name": "风险溢价", "english": "Risk Premium", "definition": "承担不确定性所要求的额外回报。", "connection": "供应风险会进入原油价格。"},
+    {"name": "基点", "english": "Basis Point", "definition": "1个基点等于0.01个百分点。", "connection": "常用于表达利率变化。"}
+  ],
+  "concept": {
+    "title": "为什么好消息公布后，股价反而可能下跌？",
+    "question": "新闻告诉你结果，投资分析还要比较市场原来的剧本。",
+    "explanation": ["一家公司的利润增长20%看起来不错；但若市场此前预期增长30%，投资者仍可能下调未来判断。", "价格变化常来自新信息对未来预期的修正，而不是对过去结果的简单奖励。"],
+    "formula": {"name": "预期差", "expression": "实际结果 − 市场一致预期", "example": "预计LPR为3.00%，实际2.90%，相差10个基点。", "limitation": "公式只能描述偏离，不能自动判断涨跌。"},
+    "counterexample": "如果价格此前已经过度悲观，即使结果仍然不好，只要没那么差，资产价格也可能上涨。"
+  },
+  "company_case": {
+    "company": "中国东航",
+    "topic": "油价下跌为什么有帮助，却不保证马上盈利？",
+    "business_model": "公司向个人和企业出售客运服务，也经营货运等业务。航空座位是一种起飞后就会过期的库存。",
+    "customers_pay_because": "客户购买的是特定时间、特定航线上的运输能力。",
+    "revenue_profit_cash": "收入同时受到座位数量、客座率和平均票价影响；利润还受到油价、汇率和固定成本影响。",
+    "advantages": ["航线网络方便中转", "枢纽机场时刻具有稀缺性", "会员与企业客户形成重复消费"],
+    "weaknesses": ["固定成本和资本投入高", "油价与汇率不可控", "票价和客座率可能波动"],
+    "metrics": [
+      {"label": "2025年营业收入", "value": "1,399.41亿元", "date": "同比+5.92%", "source_ids": ["s6"]},
+      {"label": "全年承运旅客", "value": "约1.5亿人次", "date": "同比+6.67%", "source_ids": ["s6"]},
+      {"label": "飞机燃油成本", "value": "436.90亿元", "date": "同比−3.98%", "source_ids": ["s6"]}
+    ],
+    "failure_conditions": ["油价下跌来自经济衰退并伴随客流下降", "票价下降超过燃油成本改善"],
+    "valuation_boundary": "好公司仍可能因为价格过高而不是好投资。"
+  },
+  "question": {
+    "prompt": "某公司利润增长20%，但股价在公告后下跌。哪个解释最合理？",
+    "options": [
+      {"id": "A", "text": "利润增长对股价没有用"},
+      {"id": "B", "text": "市场一定在操纵股价"},
+      {"id": "C", "text": "需要比较此前预期、利润质量和未来指引"}
+    ],
+    "answer": "C",
+    "explanation": "20%的增长不能完成判断，还要比较市场原先期待多少、增长来自哪里，以及未来指引有没有变化。"
+  },
+  "knowledge_path": {
+    "module": "风险与决策",
+    "parent": "市场预期",
+    "nodes": ["一致预期", "Price In", "预期差", "风险溢价"],
+    "today": "预期差"
+  },
+  "sources": [
+    {"id": "s1", "publisher": "美联储", "title": "FOMC声明", "published_at": "2026-06-17", "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm", "source_type": "primary"},
+    {"id": "s2", "publisher": "Reuters", "title": "中国LPR调查", "published_at": "2026-06-18", "url": "https://www.investing.com/news/economy-news/china-seen-holding-rates-unchanged-as-uneven-economic-recovery-persists-4749012", "source_type": "wire"},
+    {"id": "s3", "publisher": "Reuters", "title": "原油与海峡通行", "published_at": "2026-06-19", "url": "https://za.investing.com/news/commodities-news/oil-falls-as-supply-starts-moving-through-strait-of-hormuz-4336459", "source_type": "wire"},
+    {"id": "s4", "publisher": "Reuters", "title": "黄金与强美元", "published_at": "2026-06-19", "url": "https://www.brecorder.com/news/40426247", "source_type": "wire"},
+    {"id": "s5", "publisher": "Reuters", "title": "全球市场与美元", "published_at": "2026-06-19", "url": "https://www.fidelity.com/news/article/default/202606190459RTRSNEWSCOMBINED_L6N42R0AE_1", "source_type": "wire"},
+    {"id": "s6", "publisher": "中国东航", "title": "2025年度报告", "published_at": "2026-04", "url": "https://www.ceair.com/global/static/AboutChinaEasternAirlines/intoEasternAirlines/InvestorRelations/periodicReports/ShanghaiStockExchangeReleased/ShanghaiStockExchangeReleased2025/202604/P020260408479381018446.pdf", "source_type": "primary"}
+  ],
+  "disclaimer": "本文用于投资知识学习和信息交流，不构成任何投资建议。",
+  "generated_at": "2026-06-21T07:55:00+08:00",
+  "published_at": "2026-06-21T08:00:00+08:00"
+}
