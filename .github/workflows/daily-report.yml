@@ -1,9 +1,6 @@
-name: 每日投资晨报
+name: OpenAI手动备选生成
 
 on:
-  schedule:
-    # UTC 23:30 = 北京时间次日 07:30，为08:00发布预留生成和部署时间。
-    - cron: "30 23 * * *"
   workflow_dispatch:
 
 permissions:

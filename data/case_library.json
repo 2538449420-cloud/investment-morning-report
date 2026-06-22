@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "company": "腾讯控股",
+      "topic": "为什么微信的高频使用能支撑多种收入，却不等于所有业务都没有风险？",
+      "business_model_notes": [
+        "微信与QQ连接用户关系和内容消费，降低用户迁移意愿。",
+        "收入来自增值服务、网络广告、金融科技及企业服务等不同业务。",
+        "网络效应提高平台价值，但商业化强度必须兼顾用户体验。"
+      ],
+      "advantages": ["社交网络效应", "高使用频率", "多元收入", "生态协同"],
+      "weaknesses": ["游戏增长波动", "广告具有周期性", "监管约束", "新业务投资回报不确定"],
+      "failure_conditions": ["用户活跃度持续下降", "商业化破坏体验", "高投入业务长期无法产生现金回报"],
+      "sources": [
+        {"publisher": "Tencent", "title": "Investor Relations", "url": "https://www.tencent.com/en-us/investors.html", "source_type": "primary"}
+      ]
+    },
+    {
+      "company": "NVIDIA",
+      "topic": "芯片需求高速增长时，护城河来自哪里，周期风险又藏在哪里？",
+      "business_model_notes": [
+        "公司销售GPU、网络产品及相关系统，并通过CUDA软件生态降低开发者迁移意愿。",
+        "客户付费不仅为了芯片算力，也为了软硬件协同、开发工具和部署效率。",
+        "高增长可能同时吸引竞争、客户自研和供应链扩张。"
+      ],
+      "advantages": ["软硬件生态", "开发者工具积累", "规模与研发投入", "高性能计算品牌"],
+      "weaknesses": ["半导体周期", "客户集中", "供应链依赖", "出口限制与竞争"],
+      "failure_conditions": ["客户大规模转向自研芯片", "AI资本开支回报低于预期", "软件生态优势被替代"],
+      "sources": [
+        {"publisher": "NVIDIA", "title": "Financial Reports and SEC Filings", "url": "https://investor.nvidia.com/financial-info/financial-reports-and-sec-filings/default.aspx", "source_type": "primary"}
+      ]
+    },
+    {
+      "company": "中国东航",
+      "topic": "油价下跌为什么有帮助，却不保证航空公司马上盈利？",
+      "business_model_notes": [
+        "航空座位是起飞后就会过期的库存，收入同时取决于运力、客座率和平均票价。",
+        "利润还受到燃油、汇率、人工、折旧及机场费用影响。",
+        "油价改善如果伴随需求下降，成本利好可能被票价和客流下滑抵消。"
+      ],
+      "advantages": ["航线网络", "枢纽时刻资源", "会员与企业客户"],
+      "weaknesses": ["固定成本高", "资本投入大", "油价和汇率不可控"],
+      "failure_conditions": ["经济走弱导致客流下降", "票价下降超过燃油成本改善"],
+      "verified_metrics": [
+        {"label": "2025年营业收入", "value": "1,399.41亿元", "date": "2025年度"},
+        {"label": "飞机燃油成本", "value": "436.90亿元", "date": "2025年度"}
+      ],
+      "sources": [
+        {"publisher": "中国东航", "title": "2025年度报告", "url": "https://www.ceair.com/global/static/AboutChinaEasternAirlines/intoEasternAirlines/InvestorRelations/periodicReports/ShanghaiStockExchangeReleased/ShanghaiStockExchangeReleased2025/202604/P020260408479381018446.pdf", "source_type": "primary"}
+      ]
+    }
+  ]
+}

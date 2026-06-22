@@ -2,5 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+.vercel/
 launcher/data/draft.json
 launcher/data/latest.json

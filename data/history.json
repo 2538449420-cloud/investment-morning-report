@@ -1,0 +1,11 @@
+{
+  "reports": [
+    {
+      "report_date": "2026-06-21",
+      "theme": "市场交易的，往往是现实与预期之间的差",
+      "summary": "先学会比较现实与市场原先的预期。",
+      "company": "中国东航",
+      "path": "data/latest.json"
+    }
+  ]
+}

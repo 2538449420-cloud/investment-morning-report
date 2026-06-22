@@ -84,7 +84,12 @@ function renderReportData(data) {
 
 async function loadLatestReport() {
   if (window.location.protocol === 'file:') return;
-  const endpoints = ['/api/reports/latest', './data/latest.json'];
+  const cacheBuster = new Date().toISOString().slice(0, 13);
+  const endpoints = [
+    `https://raw.githubusercontent.com/2538449420-cloud/investment-morning-report/main/data/today.json?v=${cacheBuster}`,
+    '/api/reports/latest',
+    './data/latest.json'
+  ];
   for (const endpoint of endpoints) {
     try {
       const response = await fetch(endpoint, { cache: 'no-store' });
@@ -98,6 +103,50 @@ async function loadLatestReport() {
     }
   }
   console.info('使用内置样稿，后台晨报尚未就绪。');
+}
+
+function rawGitHubUrl(path) {
+  if (!/^data\/[a-zA-Z0-9_./-]+\.json$/.test(path)) return null;
+  const cacheBuster = new Date().toISOString().slice(0, 13);
+  return `https://raw.githubusercontent.com/2538449420-cloud/investment-morning-report/main/${path}?v=${cacheBuster}`;
+}
+
+async function openArchivedReport(path) {
+  const url = rawGitHubUrl(path);
+  if (!url) return;
+  try {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    renderReportData(await response.json());
+    setView('today');
+  } catch (error) {
+    console.warn('历史晨报暂时无法读取。', error);
+  }
+}
+
+async function loadHistoryArchive() {
+  const list = document.getElementById('history-list');
+  const indexUrl = rawGitHubUrl('data/history.json');
+  if (!list || !indexUrl) return;
+  try {
+    const response = await fetch(indexUrl, { cache: 'no-store' });
+    if (!response.ok) return;
+    const archive = await response.json();
+    if (!Array.isArray(archive.reports) || !archive.reports.length) return;
+    list.innerHTML = archive.reports.map((item, index) => `
+      <button class="history-card${index === 0 ? ' featured' : ''}" type="button" data-history-path="${escapeHtml(item.path)}">
+        <time>${escapeHtml(formatChineseDate(item.report_date))}</time>
+        <h2>${escapeHtml(item.theme)}</h2>
+        <p>${escapeHtml(item.company || item.summary)}</p>
+        <span>阅读晨报 →</span>
+      </button>
+    `).join('');
+    list.querySelectorAll('[data-history-path]').forEach((button) => {
+      button.addEventListener('click', () => openArchivedReport(button.dataset.historyPath));
+    });
+  } catch (error) {
+    console.info('使用内置历史样稿。');
+  }
 }
 
 function setView(name) {
@@ -208,3 +257,4 @@ window.addEventListener('scroll', updateReadingState, { passive: true });
 window.addEventListener('resize', updateReadingState);
 updateReadingState();
 loadLatestReport();
+loadHistoryArchive();
