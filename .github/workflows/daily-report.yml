@@ -1,10 +1,14 @@
-name: OpenAI手动备选生成
+name: 每日免费AI投资晨报
 
 on:
+  schedule:
+    # UTC 23:40 = 北京时间次日07:40，为08:00前生成和部署预留时间。
+    - cron: "40 23 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  models: read
   pages: write
   id-token: write
 
@@ -27,16 +31,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 生成今日晨报
+      - name: 使用GitHub Models生成晨报
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4' }}
-        run: python launcher/generate_once.py
+          AI_PROVIDER: github_models
+          AI_MODEL: ${{ vars.AI_MODEL || 'openai/gpt-4.1-mini' }}
+          GH_MODELS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python launcher/generate_free.py
 
-      - name: 检查生成文件
-        run: python -c "import json; json.load(open('data/latest.json', encoding='utf-8')); print('latest.json valid')"
+      - name: 检查晨报文件
+        run: python -c "import json; json.load(open('data/today.json', encoding='utf-8')); json.load(open('data/history.json', encoding='utf-8')); print('report files valid')"
 
-      - name: 保存晨报历史
+      - name: 保存当前晨报和历史归档
         run: |
           git config user.name "morning-report-bot"
           git config user.email "morning-report-bot@users.noreply.github.com"

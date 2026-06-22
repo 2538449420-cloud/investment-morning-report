@@ -18,7 +18,7 @@
 - 互动思考题；
 - 打印或保存为 PDF；
 - 导出 Word 兼容草稿；
-- Vercel Cron 每天自动触发；
+- GitHub Actions每天自动触发；
 - 多个公开 RSS 新闻源；
 - GitHub Models 免费推理接口，以及可替换 AI 提供商；
 - 当前晨报与按日期保存的历史晨报；
@@ -33,7 +33,7 @@
 ## 自动流程
 
 ```text
-Vercel Cron（北京时间目标08:00）
+GitHub Actions（北京时间07:40启动，目标08:00前发布）
 → 抓取公开RSS
 → 免费AI分析并生成完整JSON
 → 校验结构、数量和来源URL
@@ -45,26 +45,11 @@ Vercel Cron（北京时间目标08:00）
 
 任一步失败都不会覆盖上一期。
 
-## Vercel部署
+## 部署与自动生成
 
-1. 在Vercel用GitHub登录，导入仓库 `2538449420-cloud/investment-morning-report`。
-2. Framework Preset选择 `Other`，其他构建设置保持默认，先完成首次部署。
-3. 在Vercel项目 `Settings → Environment Variables` 添加：
+Vercel已经连接GitHub并负责网页；GitHub Actions负责每天生成。工作流使用GitHub自动签发的短期令牌，无需创建个人Token，也不用在Vercel配置环境变量。每天生成成功后会提交当前晨报和历史归档，Vercel自动同步。
 
-| 名称 | 用途 |
-|---|---|
-| `CRON_SECRET` | 自己生成的长随机字符串，保护定时接口 |
-| `GH_MODELS_TOKEN` | GitHub Models读取权限，仅供免费AI推理 |
-| `GH_CONTENT_TOKEN` | 仅授权本仓库Contents读写，用于保存晨报 |
-| `GH_CONTENT_REPOSITORY` | `2538449420-cloud/investment-morning-report` |
-| `AI_PROVIDER` | `github_models` |
-| `AI_MODEL` | 默认 `openai/gpt-4.1-mini`，也可换成账号可用模型 |
-
-4. 环境变量添加到Production，保存后重新部署一次。
-5. `vercel.json` 设置为UTC 00:00触发，即北京时间目标08:00。
-6. 首次任务成功后，网页出现当天晨报，往期内容进入历史目录。
-
-不要把任何Token写入代码、JSON、聊天或浏览器前端。免费模型有速率和额度限制；限额不足时网站保留上一期。
+免费模型有速率和额度限制；限额不足时网站保留上一期，不会生成假内容。
 
 ## 切换AI提供商
 
