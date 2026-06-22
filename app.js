@@ -162,7 +162,8 @@ document.getElementById('word-button').addEventListener('click', () => {
   const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = '投资晨报-2026-06-21.doc';
+  const reportDate = reportContent.querySelector('time[datetime]')?.getAttribute('datetime') || '今日';
+  link.download = `投资晨报-${reportDate}.doc`;
   link.click();
   URL.revokeObjectURL(link.href);
   moreMenu.hidden = true;

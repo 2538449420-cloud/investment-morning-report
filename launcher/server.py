@@ -25,12 +25,12 @@ from zoneinfo import ZoneInfo
 
 
 APP_ROOT = Path(__file__).resolve().parent.parent
-PROJECT_ROOT = APP_ROOT.parent / "投资晨报发射器-V1"
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DRAFT_FILE = DATA_DIR / "draft.json"
 LATEST_FILE = DATA_DIR / "latest.json"
 STATUS_FILE = DATA_DIR / "status.json"
 PROMPT_FILE = Path(__file__).resolve().parent / "prompts" / "report_prompt.md"
+KNOWLEDGE_FILE = APP_ROOT / "data" / "knowledge.json"
 TIMEZONE = ZoneInfo("Asia/Shanghai")
 GENERATE_AT = clock_time(7, 40)
 PUBLISH_AT = clock_time(8, 0)
@@ -62,15 +62,11 @@ def update_status(**values: Any) -> None:
 
 def build_prompt(report_date: str) -> str:
     base_prompt = PROMPT_FILE.read_text(encoding="utf-8")
-    spec = (PROJECT_ROOT / "晨报生成说明书.md").read_text(encoding="utf-8")
-    knowledge = (PROJECT_ROOT / "知识树台账.md").read_text(encoding="utf-8")
-    return (
-        base_prompt.replace("{{REPORT_DATE}}", report_date)
-        + "\n\n---\n\n# 晨报规范\n\n"
-        + spec
-        + "\n\n---\n\n# 内部知识台账\n\n"
-        + knowledge
-    )
+    prompt = base_prompt.replace("{{REPORT_DATE}}", report_date)
+    if KNOWLEDGE_FILE.exists():
+        prompt += "\n\n---\n\n# 内部知识台账（JSON）\n\n"
+        prompt += KNOWLEDGE_FILE.read_text(encoding="utf-8")
+    return prompt
 
 
 def extract_output_text(response: Dict[str, Any]) -> str:
