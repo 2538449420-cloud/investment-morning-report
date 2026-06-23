@@ -194,6 +194,12 @@ def call_ai(prompt: str) -> dict[str, Any]:
             raise RuntimeError("尚未配置 GH_MODELS_TOKEN")
         endpoint = os.getenv("GITHUB_MODELS_ENDPOINT", "https://models.github.ai/inference/chat/completions")
         model = os.getenv("AI_MODEL", "openai/gpt-4.1-mini")
+    elif provider == "deepseek":
+        token = os.getenv("DEEPSEEK_API_KEY")
+        if not token:
+            raise RuntimeError("尚未配置 DEEPSEEK_API_KEY")
+        endpoint = os.getenv("DEEPSEEK_ENDPOINT", "https://api.deepseek.com/chat/completions")
+        model = os.getenv("AI_MODEL", "deepseek-chat")
     elif provider == "openai":
         token = os.getenv("OPENAI_API_KEY")
         if not token:

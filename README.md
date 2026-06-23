@@ -20,7 +20,7 @@
 - 导出 Word 兼容草稿；
 - GitHub Actions每天自动触发；
 - 多个公开 RSS 新闻源；
-- GitHub Models 免费推理接口，以及可替换 AI 提供商；
+- DeepSeek API，以及可替换 AI 提供商；
 - 当前晨报与按日期保存的历史晨报；
 - 失败保护：抓取、AI或校验失败时不覆盖上一期。
 
@@ -35,7 +35,7 @@
 ```text
 GitHub Actions（北京时间07:40启动，目标08:00前发布）
 → 抓取公开RSS
-→ 免费AI分析并生成完整JSON
+→ DeepSeek分析并生成完整JSON
 → 校验结构、数量和来源URL
 → 归档到 data/history/YYYY-MM-DD.json
 → 更新 data/history.json
@@ -47,9 +47,9 @@ GitHub Actions（北京时间07:40启动，目标08:00前发布）
 
 ## 部署与自动生成
 
-Vercel已经连接GitHub并负责网页；GitHub Actions负责每天生成。工作流使用GitHub自动签发的短期令牌，无需创建个人Token，也不用在Vercel配置环境变量。每天生成成功后会提交当前晨报和历史归档，Vercel自动同步。
+Vercel已经连接GitHub并负责网页；GitHub Actions负责每天生成。只需在GitHub仓库的Actions Secrets中配置 `DEEPSEEK_API_KEY`，不用在Vercel填写。每天生成成功后会提交当前晨报和历史归档，Vercel自动同步。
 
-免费模型有速率和额度限制；限额不足时网站保留上一期，不会生成假内容。
+余额不足或接口失败时，网站保留上一期并显示“当前展示最近一期”，不会生成假内容。
 
 ## 切换AI提供商
 

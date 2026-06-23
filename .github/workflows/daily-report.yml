@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  models: read
   pages: write
   id-token: write
 
@@ -31,11 +30,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 使用GitHub Models生成晨报
+      - name: 使用DeepSeek生成晨报
         env:
-          AI_PROVIDER: github_models
-          AI_MODEL: ${{ vars.AI_MODEL || 'openai/gpt-4.1-mini' }}
-          GH_MODELS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_PROVIDER: deepseek
+          AI_MODEL: ${{ vars.AI_MODEL || 'deepseek-chat' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: python launcher/generate_free.py
 
       - name: 检查晨报文件

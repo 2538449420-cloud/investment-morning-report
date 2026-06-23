@@ -24,7 +24,14 @@ function formatChineseDate(dateString) {
   return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 · ${weekday}`;
 }
 
+function todayInBeijing() {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date());
+}
+
 function renderReportData(data) {
+  const isLatestDay = data.report_date === todayInBeijing();
   const sourceMap = new Map((data.sources || []).map((source) => [source.id, source]));
   const macro = (data.macro || []).map((item) => `
     <article><span>${escapeHtml(item.region)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.summary)} ${escapeHtml(item.why_it_matters)}</p>${sourceLink(item.source_ids, sourceMap)}</div></article>
@@ -65,7 +72,7 @@ function renderReportData(data) {
 
   reportContent.innerHTML = `
     <header class="report-hero">
-      <div class="report-meta"><span class="verified-badge">✓ 已完成来源核验</span><time datetime="${escapeHtml(data.report_date)}">${escapeHtml(formatChineseDate(data.report_date))}</time></div>
+      <div class="report-meta"><span class="verified-badge${isLatestDay ? '' : ' stale-badge'}">${isLatestDay ? '✓ 已完成来源核验' : '当前展示最近一期'}</span><time datetime="${escapeHtml(data.report_date)}">${escapeHtml(formatChineseDate(data.report_date))}</time></div>
       <h1>${escapeHtml(data.theme)}</h1><p class="lead">${escapeHtml(data.summary)}</p>
       <div class="hero-footer"><span>预计阅读 12 分钟</span><span>3条宏观 · ${(data.market_flashes || []).length}条快讯</span><span>${(data.sources || []).length} 个可靠来源</span></div>
     </header>

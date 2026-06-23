@@ -77,6 +77,7 @@ a { color: inherit; }
 .report-hero { margin-bottom: 26px; padding: 42px 46px; background: var(--green); color: #fff; border-radius: 28px 28px 28px 8px; box-shadow: 0 20px 54px rgba(30, 97, 72, .18); }
 .report-meta { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 52px; font-size: 12px; color: rgba(255,255,255,.72); }
 .verified-badge { padding: 6px 10px; color: #d7f4e1; border: 1px solid rgba(215,244,225,.3); border-radius: 999px; }
+.stale-badge { color: #ffe0a6; border-color: rgba(255,224,166,.45); }
 .report-hero h1 { max-width: 620px; margin: 0; font-family: Georgia, "Songti SC", "STSong", serif; font-size: clamp(34px, 5vw, 52px); line-height: 1.22; letter-spacing: -.03em; }
 .report-hero .lead { max-width: 600px; margin: 24px 0 38px; color: rgba(255,255,255,.82); font-size: 17px; line-height: 1.75; }
 .hero-footer { display: flex; flex-wrap: wrap; gap: 9px 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(255,255,255,.65); font-size: 11px; }
