@@ -32,8 +32,9 @@ function todayInBeijing() {
   }).format(new Date());
 }
 
-function renderReportData(data) {
+function renderReportData(data, { archived = false } = {}) {
   const isLatestDay = data.report_date === todayInBeijing();
+  const badgeText = archived ? '历史晨报 · 已完成来源核验' : isLatestDay ? '✓ 已完成来源核验' : '当前展示最近一期';
   const sourceMap = new Map((data.sources || []).map((source) => [source.id, source]));
   const macro = (data.macro || []).map((item) => `
     <article><span>${escapeHtml(item.region)}</span><div><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.summary)} ${escapeHtml(item.why_it_matters)}</p>${sourceLink(item.source_ids, sourceMap)}</div></article>
@@ -74,7 +75,7 @@ function renderReportData(data) {
 
   reportContent.innerHTML = `
     <header class="report-hero">
-      <div class="report-meta"><span class="verified-badge${isLatestDay ? '' : ' stale-badge'}">${isLatestDay ? '✓ 已完成来源核验' : '当前展示最近一期'}</span><time datetime="${escapeHtml(data.report_date)}">${escapeHtml(formatChineseDate(data.report_date))}</time></div>
+      <div class="report-meta"><span class="verified-badge${!archived && !isLatestDay ? ' stale-badge' : ''}">${badgeText}</span><time datetime="${escapeHtml(data.report_date)}">${escapeHtml(formatChineseDate(data.report_date))}</time></div>
       <h1>${escapeHtml(data.theme)}</h1><p class="lead">${escapeHtml(data.summary)}</p>
       <div class="hero-footer"><span>预计阅读 12 分钟</span><span>3条宏观 · ${(data.market_flashes || []).length}条快讯</span><span>${(data.sources || []).length} 个可靠来源</span></div>
     </header>
@@ -133,7 +134,7 @@ async function openArchivedReport(path) {
       if (!response.ok) continue;
       const data = await response.json();
       if (!data?.report_date) continue;
-      renderReportData(data);
+      renderReportData(data, { archived: true });
       setView('today');
       return;
     } catch (error) {
