@@ -218,9 +218,9 @@ def call_ai(prompt: str) -> dict[str, Any]:
                 {"role": "user", "content": prompt},
             ],
             "temperature": 0.2,
-            "max_tokens": 7000,
+            "max_tokens": 5000,
         },
-        timeout=55,
+        timeout=180,
     )
     return extract_json(payload["choices"][0]["message"]["content"])
 
