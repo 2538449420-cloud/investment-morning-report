@@ -1,0 +1,297 @@
+{
+  "report_date": "2026-06-23",
+  "theme": "预期差：当市场共识遭遇意外",
+  "summary": "今日市场聚焦美联储前主席格林斯潘逝世，以及科技股在AI热潮中的分化。宏观层面，FOMC 6月会议纪要显示鹰派立场，但市场已部分price in；商品市场因伊朗局势缓和而波动。腾讯案例揭示高频用户不等于无风险，预期差是投资关键。",
+  "macro": [
+    {
+      "region": "美国",
+      "title": "美联储前主席格林斯潘逝世",
+      "summary": "美联储于6月22日发布公告，沉痛宣布前主席艾伦·格林斯潘去世。格林斯潘在1987-2006年任职期间主导了低通胀与高增长时代，其言论曾对市场产生重大影响。",
+      "why_it_matters": "格林斯潘的离世象征一个时代的结束，可能引发市场对货币政策历史的回顾，但短期对政策路径影响有限。",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "region": "美国",
+      "title": "FOMC 6月会议纪要：鹰派暂停",
+      "summary": "6月17-18日FOMC会议维持利率不变，但点阵图显示年内仍有两次加息预期。经济预测上调GDP增速，下调失业率。",
+      "why_it_matters": "鹰派立场打压了市场对降息的乐观预期，科技股承压。但纪要发布于6月18日，市场已部分消化。",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "region": "全球",
+      "title": "伊朗局势缓和，商品市场波动",
+      "summary": "6月16日有报道称美伊和平协议前景推动美元走弱、油价下跌，黄金上涨。但此前3月伊朗战争曾导致油价突破100美元。",
+      "why_it_matters": "地缘政治风险溢价快速变化，商品价格波动剧烈，投资者需警惕预期差。",
+      "source_ids": [
+        "s10",
+        "s12"
+      ]
+    }
+  ],
+  "market_flashes": [
+    {
+      "time_bjt": "04:49",
+      "title": "Broadcom股价分析：AI芯片预期不变，软件疲软",
+      "summary": "Trefis分析指出，Broadcom在AI芯片领域前景强劲，但软件业务增长放缓。此前6月3日财报后股价大跌，因软件销售不及预期且AI芯片指引未上调。",
+      "beneficiaries": [
+        "AI芯片制造商",
+        "数据中心"
+      ],
+      "pressured": [
+        "Broadcom",
+        "软件股"
+      ],
+      "watch_point": "市场对AI芯片的乐观是否已过度？软件疲软可能持续拖累。",
+      "source_ids": [
+        "s22",
+        "s28"
+      ]
+    },
+    {
+      "time_bjt": "23:45",
+      "title": "Micron财报前预警：6月24日成败关键",
+      "summary": "24/7 Wall St. 文章指出，Micron必须在6月24日财报中交出亮眼业绩，否则股价可能暴跌。市场对存储芯片周期复苏预期较高。",
+      "beneficiaries": [
+        "Micron",
+        "存储芯片行业"
+      ],
+      "pressured": [
+        "半导体设备",
+        "其他存储厂商"
+      ],
+      "watch_point": "若财报不及预期，可能引发整个半导体板块回调。",
+      "source_ids": [
+        "s23"
+      ]
+    },
+    {
+      "time_bjt": "15:38",
+      "title": "韩国科技股：AI盈利机器面临资金压力",
+      "summary": "Simplywall.st分析指出，韩国科技公司虽在AI领域盈利强劲，但面临融资收紧和债务到期压力。",
+      "beneficiaries": [
+        "AI相关韩国科技股"
+      ],
+      "pressured": [
+        "高负债科技公司"
+      ],
+      "watch_point": "资金压力可能限制AI投资，影响长期增长。",
+      "source_ids": [
+        "s24"
+      ]
+    },
+    {
+      "time_bjt": "15:00",
+      "title": "科技股因美联储鹰派预期下跌",
+      "summary": "Reuters报道，6月7日科技股大跌，因市场重新评估美联储加息路径，AI相关股票领跌。",
+      "beneficiaries": [
+        "防御性板块",
+        "价值股"
+      ],
+      "pressured": [
+        "科技成长股",
+        "AI概念股"
+      ],
+      "watch_point": "市场是否已充分反映鹰派预期？后续科技股可能反弹。",
+      "source_ids": [
+        "s25"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "name": "预期差",
+      "english": "Expectation Gap",
+      "definition": "市场实际结果与投资者普遍预期之间的差异。正预期差（超预期）通常推动股价上涨，负预期差则导致下跌。",
+      "connection": "今日概念核心，用于分析Micron财报和Broadcom股价反应。"
+    },
+    {
+      "name": "Price In",
+      "english": "Price In",
+      "definition": "市场已经将某一信息或预期反映在当前价格中。一旦信息落地，价格不再大幅变动。",
+      "connection": "FOMC鹰派立场已被部分price in，因此后续影响有限。"
+    },
+    {
+      "name": "一致预期",
+      "english": "Consensus Expectation",
+      "definition": "分析师或市场参与者对某一指标（如盈利、利率）的普遍预测。",
+      "connection": "Micron财报的一致预期较高，形成压力。"
+    },
+    {
+      "name": "风险溢价",
+      "english": "Risk Premium",
+      "definition": "投资者因承担额外风险而要求的额外回报。地缘政治风险溢价在伊朗局势中体现。",
+      "connection": "伊朗局势缓和降低了风险溢价，导致油价下跌。"
+    },
+    {
+      "name": "网络效应",
+      "english": "Network Effect",
+      "definition": "产品或服务的价值随用户数量增加而提升。微信的社交网络效应是其护城河。",
+      "connection": "腾讯案例中，网络效应支撑高频使用，但商业化需平衡用户体验。"
+    }
+  ],
+  "concept": {
+    "title": "预期差：投资中的核心驱动力",
+    "question": "为什么市场对同一消息的反应有时截然不同？",
+    "explanation": [
+      "预期差是指实际结果与市场预期之间的差距。当一家公司财报超预期时，股价上涨；不及预期则下跌。关键在于市场已经将预期反映在价格中（price in），因此超预期的幅度才是决定因素。",
+      "例如，Broadcom AI芯片指引未上调，尽管业务强劲，但市场期待更高，导致股价下跌。Micron面临类似风险：若财报仅符合预期，股价可能不涨反跌。"
+    ],
+    "formula": {
+      "name": "股价变动与预期差",
+      "expression": "股价变动 ≈ 实际结果 - 市场预期",
+      "example": "若市场预期Micron每股收益1.5美元，实际1.6美元，则正预期差推动股价上涨。",
+      "limitation": "预期难以精确量化，且市场情绪、流动性等因素也会影响股价。"
+    },
+    "counterexample": "2026年6月FOMC会议后，市场已提前消化鹰派立场，因此纪要公布后科技股并未进一步大跌，体现了price in效应。"
+  },
+  "company_case": {
+    "company": "腾讯控股",
+    "topic": "为什么微信的高频使用能支撑多种收入，却不等于所有业务都没有风险？",
+    "business_model": "腾讯通过微信和QQ构建社交生态，连接用户与内容、服务。收入来自增值服务（游戏、会员）、网络广告、金融科技（支付、理财）及企业服务（云、SaaS）。",
+    "customers_pay_because": "用户为社交关系、内容消费（游戏、视频）、便捷支付和企业服务付费。微信的高频使用降低了用户迁移成本，形成网络效应。",
+    "revenue_profit_cash": "收入多元化：游戏贡献约30%，广告约15%，金融科技约25%，企业服务约10%。利润受游戏版号、广告周期影响。现金流强劲，但新业务（如云）需持续投入。",
+    "advantages": [
+      "社交网络效应：用户粘性高，替代成本大。",
+      "高使用频率：微信日活超10亿，为变现提供基础。",
+      "多元收入：分散单一业务风险。",
+      "生态协同：微信小程序、支付等相互促进。"
+    ],
+    "weaknesses": [
+      "游戏增长波动：依赖爆款，监管风险。",
+      "广告具有周期性：经济下行时广告收入承压。",
+      "监管约束：反垄断、数据安全政策影响。",
+      "新业务投资回报不确定：云业务竞争激烈，盈利周期长。"
+    ],
+    "metrics": [],
+    "failure_conditions": [
+      "用户活跃度持续下降：如被新兴社交平台分流。",
+      "商业化破坏体验：过度广告或收费导致用户流失。",
+      "高投入业务长期无法产生现金回报：如云业务持续亏损。"
+    ],
+    "valuation_boundary": "腾讯估值受用户增长、变现效率、监管政策影响。若用户活跃度下降或监管收紧，估值可能大幅缩水。"
+  },
+  "question": {
+    "prompt": "如果一家公司财报显示盈利同比增长20%，但股价下跌，最可能的原因是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "市场预期盈利增长30%，实际20%低于预期"
+      },
+      {
+        "id": "B",
+        "text": "公司宣布增加分红"
+      },
+      {
+        "id": "C",
+        "text": "行业整体上涨"
+      },
+      {
+        "id": "D",
+        "text": "公司回购股票"
+      }
+    ],
+    "answer": "A",
+    "explanation": "股价反映预期，实际结果低于预期（负预期差）会导致下跌。选项B、C、D通常利好股价。"
+  },
+  "knowledge_path": {
+    "module": "风险与决策",
+    "parent": "市场预期",
+    "nodes": [
+      "一致预期",
+      "Price In",
+      "预期差",
+      "风险溢价"
+    ],
+    "today": "预期差"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publisher": "美联储",
+      "title": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+      "published_at": "2026-06-22T20:45:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20260622a.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s5",
+      "publisher": "美联储",
+      "title": "Federal Reserve issues FOMC statement",
+      "published_at": "2026-06-18T02:00:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s6",
+      "publisher": "美联储",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
+      "published_at": "2026-06-18T02:00:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s10",
+      "publisher": "CryptoRank",
+      "title": "Gold Surges Over 3% as US-Iran Peace Deal Weakens Dollar and Lowers Oil Prices - CryptoRank",
+      "published_at": "2026-06-16T03:36:37+08:00",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLWU1RmZwLUEzNFBRV0dzcFBZZWJUcnZkMFdVcVJMTlZiYUZWUXJmTlhTUVBFVXBuTGQwa1FpQ1gtbEJUWUY0aURzNUh5ZHdvYXk5cWF0OUNjLUVZbkNNZnVXVGIxcHUyOXhJakVtMmtKMzRBTkgzMW16ZXZDUmdLd25QSGJWQQ?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s12",
+      "publisher": "Moneycontrol.com",
+      "title": "Commodity Corner: Oil, gold advance as markets assess US-Iran peace prospects - Moneycontrol.com",
+      "published_at": "2026-06-17T10:38:55+08:00",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQR2UxRzdCdlJ5ZDVlTE4yT1lYME1sdGpIUkNJQ2x6d2dCRHJtTXNDT0QwMm04anJCSy1RTEloakVBX0JBOHZtQVRZbk01eGJxTDNVSF9TSDYxVExiYThmcHBWYlZmUkYxRUo0Q1lfbHZLWWNLd2FFcjJrV0FuMVNLcWVrYTFJc1QzLTU3c01YWnBpMm4tZWxOUkFzeTM1WGdvU2N3clJLRzN4dXgwREx3Z3g1bkhORHFjUThCWkZMa01PdS1TOXpfS1M5SDBlN0R3M0dQcnUwTldEME9a0gHiAUFVX3lxTE9ZOW41TFY0ZWhKWndaZnNlSlNadG1zMENWQ1FhTkRlU1VVdHRmVHdqMFhndkdGZVRlaGRMSWZjZFRYNTZlV25VTXJpTzJSX3dwVG5PbDd5Tko5QTYySU9ZOUNweldwb0FBbV83T3d5NVFHY25JX2kxTGp4eEZMTDVlbkhoa2NRbkZaM3AwUTE3NVBsaVl5b0tZNDNqci1nM2YwLXJkSHhEZXVUd1dmaTl3RjRFeEwtcTVKeGxwcS0wWTB5VzRvd19OYkhwbEV4WTFNRXAtcC1VZHYxaTVrYmxXeHc?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s22",
+      "publisher": "Trefis",
+      "title": "The Real Price Of Admission For Broadcom Stock - Trefis",
+      "published_at": "2026-06-23T04:49:51+08:00",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSDNOYk9abXRsaUFBLVNYLWpMQ3Z2WV9PdkhQZmE3aDRIRUpCdzg4V3I4UF9PdTZjVmJTd0pzT1dMOG9NSmlkbWpfM1pYbmFzUGNSZDVZbTB4eF95RHJLcVY2UzUzbGZkSV8xSUY1bFM4ZEdFam54S1dPMzFWOWNUajNXMmVvRTFzWnBQclRUSGF4aFkybVRObkYwbVppaHEtQ0x0aFFqNG9POW8?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s23",
+      "publisher": "24/7 Wall St.",
+      "title": "Micron Must Do This on June 24, or Its Stock Could Crash - 24/7 Wall St.",
+      "published_at": "2026-06-21T23:45:31+08:00",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaXM3VnlfLTczbERBSy1zZTA5QUs5MzRRdWltYzdqZ29TQmh1aVl0TmRuR3FaSDV1bnZyWTc5SS1RUk5Cc3d3Z1Q0TWxOdmNIbjduNmZ0MXA0TnNNRHNZZmtMZVQ4N2xhbW04U0hjd3dIZFlUeGhrU1ZNS0tsS2tXOGxOWElUUHBpVXYyRVZSS1JRZUh3V3VzTU54Qml4dVNl?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s24",
+      "publisher": "simplywall.st",
+      "title": "Korean Technology Stocks One AI Earnings Machine Two Funding Squeezes - simplywall.st",
+      "published_at": "2026-06-18T15:38:46+08:00",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNajJacTRPRWhkZHE2SjU0M0IxVTFOZmVsTXFzeTdqbUdRYVRXWTdrbTIzSmtiVlRxMUZvLU1oaDFnNTFrdm5vQnFJa05Ua1puQVRkWVpPdElYUVI5MmdiYTIyVXNNMmoxaHI2MzI1VmFYVi1LTzdoYi12SWo2VnJwTG5jQjAwNVFTV1hwQnR3U0N2RTlnbXJXZk1rVW9TbWs5Z0huUk9lZkc5VThsQmE0Vnh6VTE1ZjRNd2ptb1BvT2I3M25XdGxsZS1hMUkyajVLUlUzOVVPQUNBUFXSAeABQVVfeXFMUDBWV29tTWU1M3lPRGFOc1lQbjBzVmp6WUI5VWFrS0hjVTZzZ01sLUJZQWJXRVQxekE3QmRfZ2Z1UFRvTTNlcE1CZnJqX2xSWmp5b0dyaUtrS3AyTVYtV25PRHBxaUY2Y0xaaVdwRmIweFdKVktVYlFFdW1ZekVZTU4tOHhCWVZkODlYT1BDYTg5Q2JYYWQwVUlEWklPVVNXNXZKc1VQdWlaaXcxOERuaTVwd1gwRTU0WkFrOVdSdlBveTRDb2ZnTnlaSklWZk9EaHFUM01LanJnTzlmZkpZR3E?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s25",
+      "publisher": "Reuters",
+      "title": "Tech stocks dive as Fed bets rattle AI rally - Reuters",
+      "published_at": "2026-06-07T15:00:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNNDgtZ3Z4ZFBTLTd4X2RDZGpodnJvdzRfOGlSY3VOaFB6WXBVVklsbHhLLXJOQ183NmdKeDBMc1RsWW1VVC10OWRWWENReUUya0lMLWNmWjhZTGRjY21OQWE0cV95YVZNbDBPYUNGVm1hTWJrTG9wR1ZPdTY5aEdrd1hMN0s1Vms?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s28",
+      "publisher": "CNBC",
+      "title": "Broadcom stock plunges on weak software sales, unchanged AI chip forecast for the year - CNBC",
+      "published_at": "2026-06-03T15:00:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MUWNtalczVVl2UEVtVFhSUF9QVnZVd2ZuU01aaFZaTGZuOWpNWW1Wc1Y3Q050V1ZiRWs3MVE0R3ZUd196Sno4LUZkWUJadnRHaWI5VHpLVGRwQTBTZkJuY2JZelp1VWQyUTlpYVJrVTd2YkdSblQwNzV6dmk0aknSAYQBQVVfeXFMTTBfUHNDN2g0eG9Gc3VON0cwRFlFRUhLcDBMbmNZUXVPcTFVWFNwWTZibW51MkFuS1BON0xTTXVHbFd6N21LekpLZVF5NFBobnJTTnJxa0VhdGxzV3hDS3RYc2RIWHJlMG1LR2xXUlYtSGhsbGx1Y3JsTm8wbk5UUXhOZGJU?oc=5",
+      "source_type": "mainstream"
+    }
+  ],
+  "disclaimer": "本文用于投资知识学习和信息交流，不构成任何投资建议。",
+  "generated_at": "2026-06-23T12:45:13.652753+08:00",
+  "published_at": "2026-06-23T12:46:29.907200+08:00"
+}

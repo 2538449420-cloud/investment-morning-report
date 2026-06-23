@@ -1,0 +1,314 @@
+{
+  "report_date": "2026-06-22",
+  "theme": "预期差：当市场共识被打破",
+  "summary": "美联储前主席格林斯潘逝世，市场反应待观察；FOMC会议后科技股承压，AI芯片预期分化；油价下跌利好航空，但需求疲软可能抵消成本改善。今日聚焦预期差——市场已price in的信息与未来实际之间的差距。",
+  "macro": [
+    {
+      "region": "美国",
+      "title": "美联储前主席格林斯潘逝世",
+      "summary": "美联储于2026年6月22日发布公告，沉痛宣布前主席艾伦·格林斯潘逝世。格林斯潘在1987-2006年担任美联储主席，其货币政策影响深远。",
+      "why_it_matters": "格林斯潘的离世可能引发市场对货币政策历史的回顾，但短期对利率预期影响有限。投资者需关注是否出现纪念性文章或政策评论，影响市场情绪。",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "region": "美国",
+      "title": "FOMC 6月会议：利率维持不变，经济预测上调",
+      "summary": "美联储在6月16-17日FOMC会议上维持利率不变，并发布经济预测。市场此前已充分预期，但科技股随后下跌，反映对AI盈利可持续性的担忧。",
+      "why_it_matters": "利率路径不变，但点阵图显示年内可能降息一次。市场焦点从利率转向盈利，尤其是AI相关公司的业绩能否支撑高估值。",
+      "source_ids": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "region": "全球",
+      "title": "美伊和平协议推动黄金上涨、美元走弱",
+      "summary": "2026年6月16日，美伊和平协议消息推动黄金涨超3%，美元走弱，油价下跌。地缘风险溢价消退，但商品市场波动仍大。",
+      "why_it_matters": "美元走弱利好新兴市场和大宗商品，但油价下跌对产油国和能源公司不利。航空公司受益于燃油成本下降，但需关注需求端。",
+      "source_ids": [
+        "s10"
+      ]
+    }
+  ],
+  "market_flashes": [
+    {
+      "time_bjt": "07:10",
+      "title": "美联储前主席格林斯潘逝世",
+      "summary": "美联储官方宣布格林斯潘去世，享年100岁。市场可能短暂波动，但预计影响有限。",
+      "beneficiaries": [
+        "无直接受益"
+      ],
+      "pressured": [
+        "无直接承压"
+      ],
+      "watch_point": "市场是否过度反应？格林斯潘的遗产可能引发对当前货币政策的讨论，但实质影响小。",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "time_bjt": "07:10",
+      "title": "美光科技财报前警告：若业绩不及预期，股价可能暴跌",
+      "summary": "24/7 Wall St.报道，美光科技需在6月24日财报中证明AI芯片需求强劲，否则股价可能大幅下跌。此前科技股已因FOMC和Broadcom疲软而承压。",
+      "beneficiaries": [
+        "AI芯片公司（如Nvidia、AMD）"
+      ],
+      "pressured": [
+        "美光科技"
+      ],
+      "watch_point": "市场是否已price in乐观预期？若美光指引保守，可能引发AI板块回调。",
+      "source_ids": [
+        "s23"
+      ]
+    },
+    {
+      "time_bjt": "07:10",
+      "title": "Broadcom股价因软件销售疲软暴跌，AI芯片预测不变",
+      "summary": "6月3日Broadcom财报显示软件销售弱于预期，AI芯片收入预测未上调，股价大跌。市场对AI盈利的预期出现分化。",
+      "beneficiaries": [
+        "无"
+      ],
+      "pressured": [
+        "Broadcom",
+        "半导体行业"
+      ],
+      "watch_point": "市场是否已消化？后续需关注其他AI公司财报能否证实需求。",
+      "source_ids": [
+        "s28"
+      ]
+    },
+    {
+      "time_bjt": "07:10",
+      "title": "油价下跌：美伊和平协议与需求担忧",
+      "summary": "美伊和平协议推动油价下跌，但此前伊朗战争曾推高油价至100美元以上。当前油价回落，但全球需求前景不明。",
+      "beneficiaries": [
+        "航空公司（如中国东航）",
+        "化工企业"
+      ],
+      "pressured": [
+        "能源公司",
+        "产油国"
+      ],
+      "watch_point": "油价下跌是否已充分反映？若经济衰退导致需求进一步下滑，油价可能继续走低。",
+      "source_ids": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "time_bjt": "07:10",
+      "title": "中国概念股：盈利增长落后于股价涨幅",
+      "summary": "南华早报报道，调查显示中国企业盈利增长未能跟上股市上涨，估值扩张可能不可持续。",
+      "beneficiaries": [
+        "无"
+      ],
+      "pressured": [
+        "中国概念股"
+      ],
+      "watch_point": "市场是否已price in盈利改善？若财报季不及预期，可能引发回调。",
+      "source_ids": [
+        "s16"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "name": "预期差",
+      "english": "Expectation Gap",
+      "definition": "市场一致预期（分析师共识）与实际结果之间的差异。正预期差（实际好于预期）通常推动股价上涨，负预期差则导致下跌。",
+      "connection": "今日主题：美光财报、Broadcom业绩、油价对航空的影响，都围绕预期差展开。"
+    },
+    {
+      "name": "Price In",
+      "english": "Price In",
+      "definition": "市场已经将某一信息或预期反映在当前价格中。例如，若油价下跌已被充分price in，则航空股可能不会因油价继续下跌而上涨。",
+      "connection": "预期差的前提是判断哪些信息已被price in。"
+    },
+    {
+      "name": "一致预期",
+      "english": "Consensus Expectation",
+      "definition": "分析师对某公司未来盈利、收入等指标的平均预测。市场通常以此作为基准。",
+      "connection": "一致预期是衡量预期差的基准。"
+    },
+    {
+      "name": "风险溢价",
+      "english": "Risk Premium",
+      "definition": "投资者因承担额外风险而要求的额外回报。例如，航空股因油价和汇率风险，其风险溢价高于公用事业股。",
+      "connection": "预期差越大，风险溢价越高；若预期差持续为负，风险溢价上升。"
+    },
+    {
+      "name": "燃油成本",
+      "english": "Fuel Cost",
+      "definition": "航空公司运营中最大的可变成本之一。中国东航2025年燃油成本436.90亿元，占收入约31%。油价下跌直接降低燃油成本，但需考虑对冲和需求影响。",
+      "connection": "油价下跌是航空公司的利好，但需判断是否已被price in，以及需求端是否形成负预期差。"
+    }
+  ],
+  "concept": {
+    "title": "预期差：市场定价的核心驱动力",
+    "question": "为什么油价下跌不一定让航空公司股价上涨？",
+    "explanation": [
+      "市场定价基于预期。如果投资者已经预期油价会下跌，那么当油价实际下跌时，股价可能不会上涨，因为利好已被price in。只有实际油价跌幅超过预期，才形成正预期差，推动股价上涨。",
+      "此外，油价下跌可能伴随需求疲软。如果经济走弱导致客座率和票价下降，即使燃油成本降低，利润也可能下滑。因此，需要同时分析成本和收入两端的预期差。"
+    ],
+    "formula": {
+      "name": "预期差公式",
+      "expression": "预期差 = 实际值 - 一致预期值",
+      "example": "若分析师预期美光科技每股收益为1.50美元，实际为1.60美元，则预期差为+0.10美元，股价通常上涨。",
+      "limitation": "预期差仅反映短期市场反应，长期股价还受基本面趋势影响。"
+    },
+    "counterexample": "2026年6月Broadcom财报：软件销售低于预期（负预期差），但AI芯片预测不变，股价仍大跌。说明即使部分业务符合预期，整体预期差为负仍会导致下跌。"
+  },
+  "company_case": {
+    "company": "中国东航",
+    "topic": "油价下跌为什么有帮助，却不保证航空公司马上盈利？",
+    "business_model": "中国东航通过提供客运和货运航空运输服务获取收入。其商业模式核心是：在固定时刻和航线（运力）上，通过销售座位（客座率）和定价（票价）实现收入。座位是易逝品，起飞后价值归零。",
+    "customers_pay_because": "旅客支付票价以获取从A到B的运输服务，商务旅客更看重时刻和频次，休闲旅客更看重价格。企业客户通过协议获得折扣和优先服务。",
+    "revenue_profit_cash": "收入 = 运力 × 客座率 × 平均票价。利润 = 收入 - 燃油成本 - 其他成本（人工、折旧、机场费等）。现金流受资本开支（购机）和运营资金影响。2025年营收1,399.41亿元，燃油成本436.90亿元，占比31%。",
+    "advantages": [
+      "航线网络：覆盖国内主要城市和国际枢纽，形成网络效应。",
+      "枢纽时刻资源：在上海等核心机场拥有稀缺时刻，构成竞争壁垒。",
+      "会员与企业客户：常旅客计划和企业协议提高客户粘性。"
+    ],
+    "weaknesses": [
+      "固定成本高：飞机折旧、人工、机场费用等不随飞行量同比例变动。",
+      "资本投入大：购买飞机需要大量资金，负债率高。",
+      "油价和汇率不可控：燃油成本受国际油价影响，外币负债受汇率波动影响。"
+    ],
+    "metrics": [
+      {
+        "label": "2025年营业收入",
+        "value": "1,399.41亿元",
+        "date": "2025年度",
+        "source_ids": [
+          "s29"
+        ]
+      },
+      {
+        "label": "飞机燃油成本",
+        "value": "436.90亿元",
+        "date": "2025年度",
+        "source_ids": [
+          "s29"
+        ]
+      }
+    ],
+    "failure_conditions": [
+      "经济走弱导致客流下降：若GDP增速放缓，商务和休闲出行需求减少，客座率和票价承压。",
+      "票价下降超过燃油成本改善：即使油价下跌，若需求疲软导致票价大幅下降，利润可能不升反降。"
+    ],
+    "valuation_boundary": "航空股估值通常参考市净率（P/B）和EV/EBITDA。由于盈利波动大，市盈率（P/E）在亏损时失效。估值上限取决于行业周期和公司盈利能力恢复的确定性。"
+  },
+  "question": {
+    "prompt": "根据预期差概念，以下哪种情况最可能导致中国东航股价上涨？",
+    "options": [
+      {
+        "id": "A",
+        "text": "国际油价下跌10%，但市场此前已预期下跌8%"
+      },
+      {
+        "id": "B",
+        "text": "国际油价下跌10%，但市场此前已预期下跌12%"
+      },
+      {
+        "id": "C",
+        "text": "公司公布客座率同比上升2个百分点，但市场预期上升3个百分点"
+      },
+      {
+        "id": "D",
+        "text": "公司公布燃油成本下降，但市场预期不变"
+      }
+    ],
+    "answer": "A",
+    "explanation": "选项A：实际油价跌幅（10%）大于预期（8%），形成正预期差，利好股价。选项B：实际跌幅小于预期，负预期差，利空。选项C：客座率改善不及预期，负预期差。选项D：燃油成本下降已被预期，若实际降幅与预期一致，则无预期差，股价可能不变。"
+  },
+  "knowledge_path": {
+    "module": "风险与决策",
+    "parent": "市场预期",
+    "nodes": [
+      "一致预期",
+      "Price In",
+      "预期差",
+      "风险溢价"
+    ],
+    "today": "预期差"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publisher": "美联储",
+      "title": "Federal Reserve notes with deep sadness the passing of Alan Greenspan",
+      "published_at": "2026-06-22T20:45:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20260622a.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s5",
+      "publisher": "美联储",
+      "title": "Federal Reserve issues FOMC statement",
+      "published_at": "2026-06-18T02:00:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s6",
+      "publisher": "美联储",
+      "title": "Federal Reserve Board and Federal Open Market Committee release economic projections from the June 16-17 FOMC meeting",
+      "published_at": "2026-06-18T02:00:00+08:00",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617b.htm",
+      "source_type": "primary"
+    },
+    {
+      "id": "s10",
+      "publisher": "CryptoRank",
+      "title": "Gold Surges Over 3% as US-Iran Peace Deal Weakens Dollar and Lowers Oil Prices - CryptoRank",
+      "published_at": "2026-06-16T03:36:37+08:00",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNLWU1RmZwLUEzNFBRV0dzcFBZZWJUcnZkMFdVcVJMTlZiYUZWUXJmTlhTUVBFVXBuTGQwa1FpQ1gtbEJUWUY0aURzNUh5ZHdvYXk5cWF0OUNjLUVZbkNNZnVXVGIxcHUyOXhJakVtMmtKMzRBTkgzMW16ZXZDUmdLd25QSGJWQQ?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s11",
+      "publisher": "Yahoo Finance UK",
+      "title": "Oil price tops $100 a barrel as Iran war rattles commodity markets - Yahoo Finance UK",
+      "published_at": "2026-03-09T15:00:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPa2o2cVVWS0xHTEgtaW1fWnFxWWRWNWtPUW93RGxwREVpVnBieldLdGZtQUxnWWREUzFjRXhEaWxLWUxjVjhkNFJOSk04bzVVQkp0amJaRGt5RnM1ZjNqbVhaQVRNdGFOYVR4SjFxYzFkcENydjVpbW1yeEFlOUdUR2VWaXI5ZVg5SW9IYU03SUZCTVJuQnd1S1huQQ?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s16",
+      "publisher": "South China Morning Post",
+      "title": "China’s corporate earnings lag behind stock market gains, survey finds - South China Morning Post",
+      "published_at": "2026-05-21T15:00:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNT1dqSEh6WHRudjhxcjVmaHNyTTl3bDFUWVVXT2pIb3FJOWxFdVVZdjNwSXRMZWdfNDRYVDJoV2VaQnFTTmZXRnpFVWdhcFJjLUZidTRiUktGLTFGT2xkdzl5TVJIdGpoaUdBSHlKbFFGTU9iNGJrY1ZiYi0ycnFfbVU1dzNjYzctdU4tQWNGclNCQXRhMWliR0lpMXlYMEJ3MVQyZ3Z6anhvZHlTQVc2Skd6cFpzM0dCZS1RTEQtclRxZ2dhX0HSAcYBQVVfeXFMT3FkSzUyMU50VTBteTNVWTBIS1M3YU9TQUJHelJMbzlhNUJFalg5UzlPdUpjT2xJM0ZYVURJVmt6RWl3aUhCcjkxRWo2LUZ6a0ZuSjNuTmxvWi12dG1zOUdOLUlLTWdlQTRROFd6bUctMGE2ZkxCRHV1Z3E3Y3NOQ3liZkp0TFBhS2dBR2J6RHJXeVNqSGsxMHN1elg1MVIwUENPMlYycllMUGVPYi1ZVHV1dXRoQWpQZWYtQjRnVC1UZUpWVnVn?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s23",
+      "publisher": "24/7 Wall St.",
+      "title": "Micron Must Do This on June 24, or Its Stock Could Crash - 24/7 Wall St.",
+      "published_at": "2026-06-21T23:45:31+08:00",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQaXM3VnlfLTczbERBSy1zZTA5QUs5MzRRdWltYzdqZ29TQmh1aVl0TmRuR3FaSDV1bnZyWTc5SS1RUk5Cc3d3Z1Q0TWxOdmNIbjduNmZ0MXA0TnNNRHNZZmtMZVQ4N2xhbW04U0hjd3dIZFlUeGhrU1ZNS0tsS2tXOGxOWElUUHBpVXYyRVZSS1JRZUh3V3VzTU54Qml4dVNl?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s28",
+      "publisher": "CNBC",
+      "title": "Broadcom stock plunges on weak software sales, unchanged AI chip forecast for the year - CNBC",
+      "published_at": "2026-06-03T15:00:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MUWNtalczVVl2UEVtVFhSUF9QVnZVd2ZuU01aaFZaTGZuOWpNWW1Wc1Y3Q050V1ZiRWs3MVE0R3ZUd196Sno4LUZkWUJadnRHaWI5VHpLVGRwQTBTZkJuY2JZelp1VWQyUTlpYVJrVTd2YkdSblQwNzV6dmk0aknSAYQBQVVfeXFMTTBfUHNDN2g0eG9Gc3VON0cwRFlFRUhLcDBMbmNZUXVPcTFVWFNwWTZibW51MkFuS1BON0xTTXVHbFd6N21LekpLZVF5NFBobnJTTnJxa0VhdGxzV3hDS3RYc2RIWHJlMG1LR2xXUlYtSGhsbGx1Y3JsTm8wbk5UUXhOZGJU?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s29",
+      "publisher": "中国东航",
+      "title": "2025年度报告",
+      "published_at": "",
+      "url": "https://www.ceair.com/global/static/AboutChinaEasternAirlines/intoEasternAirlines/InvestorRelations/periodicReports/ShanghaiStockExchangeReleased/ShanghaiStockExchangeReleased2025/202604/P020260408479381018446.pdf",
+      "source_type": "primary"
+    }
+  ],
+  "disclaimer": "本文用于投资知识学习和信息交流，不构成任何投资建议。",
+  "generated_at": "2026-06-23T12:45:13.652753+08:00",
+  "published_at": "2026-06-23T12:45:51.522472+08:00"
+}
