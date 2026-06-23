@@ -45,6 +45,8 @@ GitHub Actions（北京时间07:40启动，目标08:00前发布）
 
 任一步失败都不会覆盖上一期。
 
+系统从2026-06-21开始扫描缺失日期，每次最多生成2期并按最早缺口优先。若余额不足，次日早上会再次检查并继续补缺。
+
 ## 部署与自动生成
 
 Vercel已经连接GitHub并负责网页；GitHub Actions负责每天生成。只需在GitHub仓库的Actions Secrets中配置 `DEEPSEEK_API_KEY`，不用在Vercel填写。每天生成成功后会提交当前晨报和历史归档，Vercel自动同步。
