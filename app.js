@@ -2,6 +2,8 @@ const views = [...document.querySelectorAll('.view')];
 const navButtons = [...document.querySelectorAll('[data-view-target]')];
 const viewLinks = [...document.querySelectorAll('[data-view-link]')];
 const reportContent = document.getElementById('report-content');
+const reportSelect = document.getElementById('report-select');
+let historyReports = [];
 
 function escapeHtml(value = '') {
   return String(value)
@@ -87,12 +89,15 @@ function renderReportData(data) {
   `;
   bindQuiz();
   updateReadingState();
+  const selected = historyReports.find((item) => item.report_date === data.report_date);
+  if (selected && reportSelect) reportSelect.value = selected.path;
 }
 
 async function loadLatestReport() {
   if (window.location.protocol === 'file:') return;
   const cacheBuster = new Date().toISOString().slice(0, 13);
   const endpoints = [
+    `./data/today.json?v=${cacheBuster}`,
     `https://raw.githubusercontent.com/2538449420-cloud/investment-morning-report/main/data/today.json?v=${cacheBuster}`,
     '/api/reports/latest',
     './data/latest.json'
@@ -101,9 +106,9 @@ async function loadLatestReport() {
     try {
       const response = await fetch(endpoint, { cache: 'no-store' });
       if (!response.ok) continue;
-      const contentType = response.headers.get('content-type') || '';
-      if (!contentType.includes('application/json')) continue;
-      renderReportData(await response.json());
+      const data = await response.json();
+      if (!data?.report_date) continue;
+      renderReportData(data);
       return;
     } catch (error) {
       // 继续尝试下一个来源；都不可用时保留内置样稿。
@@ -119,28 +124,44 @@ function rawGitHubUrl(path) {
 }
 
 async function openArchivedReport(path) {
-  const url = rawGitHubUrl(path);
-  if (!url) return;
-  try {
-    const response = await fetch(url, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    renderReportData(await response.json());
-    setView('today');
-  } catch (error) {
-    console.warn('历史晨报暂时无法读取。', error);
+  const remoteUrl = rawGitHubUrl(path);
+  if (!remoteUrl) return;
+  const cacheBuster = new Date().toISOString().slice(0, 13);
+  for (const url of [`./${path}?v=${cacheBuster}`, remoteUrl]) {
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) continue;
+      const data = await response.json();
+      if (!data?.report_date) continue;
+      renderReportData(data);
+      setView('today');
+      return;
+    } catch (error) {
+      // 继续尝试备用地址。
+    }
   }
+  console.warn('历史晨报暂时无法读取。');
 }
 
 async function loadHistoryArchive() {
   const list = document.getElementById('history-list');
-  const indexUrl = rawGitHubUrl('data/history.json');
-  if (!list || !indexUrl) return;
-  try {
-    const response = await fetch(indexUrl, { cache: 'no-store' });
-    if (!response.ok) return;
-    const archive = await response.json();
-    if (!Array.isArray(archive.reports) || !archive.reports.length) return;
-    list.innerHTML = archive.reports.map((item, index) => `
+  const remoteUrl = rawGitHubUrl('data/history.json');
+  if (!list || !remoteUrl) return;
+  const cacheBuster = new Date().toISOString().slice(0, 13);
+  for (const indexUrl of [`./data/history.json?v=${cacheBuster}`, remoteUrl]) {
+    try {
+      const response = await fetch(indexUrl, { cache: 'no-store' });
+      if (!response.ok) continue;
+      const archive = await response.json();
+      if (!Array.isArray(archive.reports) || !archive.reports.length) continue;
+      historyReports = [...archive.reports].sort((a, b) => b.report_date.localeCompare(a.report_date));
+      reportSelect.innerHTML = historyReports.map((item, index) => `
+        <option value="${escapeHtml(item.path)}">${escapeHtml(item.report_date.slice(5).replace('-', '月') + '日')}${index === 0 ? ' · 最新' : ''}</option>
+      `).join('');
+      const currentDate = reportContent.querySelector('time[datetime]')?.getAttribute('datetime');
+      const current = historyReports.find((item) => item.report_date === currentDate);
+      reportSelect.value = current?.path || historyReports[0].path;
+      list.innerHTML = historyReports.map((item, index) => `
       <button class="history-card${index === 0 ? ' featured' : ''}" type="button" data-history-path="${escapeHtml(item.path)}">
         <time>${escapeHtml(formatChineseDate(item.report_date))}</time>
         <h2>${escapeHtml(item.theme)}</h2>
@@ -148,13 +169,20 @@ async function loadHistoryArchive() {
         <span>阅读晨报 →</span>
       </button>
     `).join('');
-    list.querySelectorAll('[data-history-path]').forEach((button) => {
-      button.addEventListener('click', () => openArchivedReport(button.dataset.historyPath));
-    });
-  } catch (error) {
-    console.info('使用内置历史样稿。');
+      list.querySelectorAll('[data-history-path]').forEach((button) => {
+        button.addEventListener('click', () => openArchivedReport(button.dataset.historyPath));
+      });
+      return;
+    } catch (error) {
+      // 继续尝试备用地址。
+    }
   }
+  console.info('使用内置历史样稿。');
 }
+
+reportSelect?.addEventListener('change', () => {
+  if (reportSelect.value) openArchivedReport(reportSelect.value);
+});
 
 function setView(name) {
   views.forEach((view) => view.classList.toggle('active', view.dataset.view === name));
