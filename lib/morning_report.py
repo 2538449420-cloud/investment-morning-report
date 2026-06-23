@@ -213,22 +213,29 @@ def call_ai(prompt: str) -> dict[str, Any]:
         if not all([token, endpoint, model]):
             raise RuntimeError("自定义AI需要 AI_API_KEY、AI_ENDPOINT、AI_MODEL")
 
+    request_body: dict[str, Any] = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": "你是严谨的投资教育编辑，只输出合法JSON对象。"},
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0.2,
+        "max_tokens": 7000,
+    }
+    if provider == "deepseek":
+        request_body["response_format"] = {"type": "json_object"}
+
     payload = request_json(
         endpoint,
         method="POST",
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        body={
-            "model": model,
-            "messages": [
-                {"role": "system", "content": "你是严谨的投资教育编辑，只输出合法JSON。"},
-                {"role": "user", "content": prompt},
-            ],
-            "temperature": 0.2,
-            "max_tokens": 5000,
-        },
+        body=request_body,
         timeout=180,
     )
-    return extract_json(payload["choices"][0]["message"]["content"])
+    choice = payload["choices"][0]
+    if choice.get("finish_reason") == "length":
+        raise RuntimeError("AI输出达到长度上限，已拒绝保存不完整晨报")
+    return extract_json(choice["message"]["content"])
 
 
 def validate_report(report: dict[str, Any], report_date: str, news: list[dict[str, str]],
