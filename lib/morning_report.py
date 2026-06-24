@@ -149,6 +149,28 @@ def choose_case(report_date: str) -> dict[str, Any]:
 def build_generation_prompt(report_date: str, news: list[dict[str, str]], case: dict[str, Any]) -> str:
     base = PROMPT_FILE.read_text(encoding="utf-8").replace("{{REPORT_DATE}}", report_date)
     knowledge = KNOWLEDGE_FILE.read_text(encoding="utf-8") if KNOWLEDGE_FILE.exists() else "{}"
+    history_summary = ""
+
+history_file = ROOT / "data" / "history.json"
+if history_file.exists():
+    try:
+        history = json.loads(history_file.read_text(encoding="utf-8"))
+        recent = history.get("reports", [])[:7]
+
+        history_summary = json.dumps(
+            [
+                {
+                    "date": item.get("report_date"),
+                    "theme": item.get("theme"),
+                    "company": item.get("company"),
+                }
+                for item in recent
+            ],
+            ensure_ascii=False,
+            indent=2,
+        )
+    except Exception:
+        history_summary = ""
     return f"""{base}
 
 # 本次任务的额外硬规则
