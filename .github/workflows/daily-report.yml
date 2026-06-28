@@ -3,7 +3,7 @@ name: 每日免费AI投资晨报
 on:
   schedule:
     # UTC 23:40 = 北京时间次日07:40，为08:00前生成和部署预留时间。
-    - cron: "40 23 * * *"
+    - cron: "41 23 * * *"
   workflow_dispatch:
 
 permissions:
