@@ -13,13 +13,14 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from lib.morning_report import (
-    build_generation_prompt,
-    call_ai,
     choose_case,
+    compact_history_entry,
     collect_news,
-    normalize_sources,
+    expand_history_reports,
+    generate_report_with_retry,
+    knowledge_stats_from_history,
+    merge_pending_knowledge,
     now_bjt,
-    validate_report,
 )
 
 
@@ -39,7 +40,8 @@ def main() -> None:
     max_reports = max(1, min(int(os.getenv("MAX_REPORTS_PER_RUN", "2")), 3))
     history_file = DATA_DIR / "history.json"
     history = json.loads(history_file.read_text(encoding="utf-8")) if history_file.exists() else {"reports": []}
-    reports = history.get("reports", [])
+    reports = expand_history_reports(history.get("reports", []))
+    history["reports"] = reports
     known_dates = {item.get("report_date") for item in reports}
 
     missing_dates = []
@@ -48,9 +50,15 @@ def main() -> None:
         if cursor.isoformat() not in known_dates:
             missing_dates.append(cursor.isoformat())
         cursor += timedelta(days=1)
-    targets = missing_dates[:max_reports]
+    # 严格新闻窗口依赖RSS仍保留对应日期新闻。太久以前的缺口无法可靠补写，
+    # 否则会为了补历史而污染“今日快讯”的时效性。
+    oldest_reliable = current.date() - timedelta(days=1)
+    targets = [item for item in missing_dates if date.fromisoformat(item) >= oldest_reliable][:max_reports]
     if not targets:
-        print("从起始日期至今天没有缺失晨报")
+        if missing_dates:
+            print("存在较早缺口，但因严格新闻时效窗口已跳过：" + ", ".join(missing_dates[:5]))
+        else:
+            print("从起始日期至今天没有缺失晨报")
         return
 
     news = collect_news()
@@ -61,40 +69,14 @@ def main() -> None:
     for report_date in targets:
         try:
             company_case = choose_case(report_date)
-            report = call_ai(build_generation_prompt(report_date, news, company_case))
-            normalize_sources(report, news, company_case)
-            validate_report(report, report_date, news, company_case)
+            report = generate_report_with_retry(report_date, news, company_case, history)
             report["generated_at"] = current.isoformat()
             report["published_at"] = now_bjt().isoformat()
             write_json(DATA_DIR / "history" / f"{report_date}.json", report)
             reports = [item for item in reports if item.get("report_date") != report_date]
-reports.append({
-    "report_date": report_date,
-    "theme": report["theme"],
-    "summary": report.get("summary", ""),
-    "company": report.get("company_case", {}).get("company", ""),
-
-    "lesson": report.get("concept", {}).get("title", ""),
-
-    "terms": [
-        item.get("name", "")
-        for item in report.get("terms", [])
-    ],
-
-    "question": report.get("question", {}).get("prompt", ""),
-
-    "macro_topics": [
-        item.get("title", "")
-        for item in report.get("macro", [])
-    ],
-
-    "market_topics": [
-        item.get("title", "")
-        for item in report.get("market_flashes", [])
-    ],
-
-    "path": f"data/history/{report_date}.json",
-})
+            reports.append(compact_history_entry(report, f"data/history/{report_date}.json"))
+            history["reports"] = reports
+            history["pending_knowledge"] = merge_pending_knowledge(history, report)
             if report_date not in knowledge["reports"]:
                 knowledge["reports"].append(report_date)
             knowledge["recent_paths"] = ([report["knowledge_path"]] + knowledge.get("recent_paths", []))[:30]
@@ -108,7 +90,11 @@ reports.append({
         raise RuntimeError("本轮没有成功生成任何晨报")
 
     reports.sort(key=lambda item: item.get("report_date", ""), reverse=True)
-    write_json(history_file, {"reports": reports})
+    write_json(history_file, {
+        "reports": reports,
+        "knowledge_stats": knowledge_stats_from_history(reports),
+        "pending_knowledge": history.get("pending_knowledge", []),
+    })
     write_json(DATA_DIR / "today.json", successful[-1])
     write_json(knowledge_file, knowledge)
     print(f"本轮成功 {len(successful)} 期，候选新闻 {len(news)} 条")
