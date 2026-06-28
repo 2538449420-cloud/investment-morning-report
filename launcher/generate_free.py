@@ -68,13 +68,33 @@ def main() -> None:
             report["published_at"] = now_bjt().isoformat()
             write_json(DATA_DIR / "history" / f"{report_date}.json", report)
             reports = [item for item in reports if item.get("report_date") != report_date]
-            reports.append({
-                "report_date": report_date,
-                "theme": report["theme"],
-                "summary": report.get("summary", ""),
-                "company": report.get("company_case", {}).get("company", ""),
-                "path": f"data/history/{report_date}.json",
-            })
+reports.append({
+    "report_date": report_date,
+    "theme": report["theme"],
+    "summary": report.get("summary", ""),
+    "company": report.get("company_case", {}).get("company", ""),
+
+    "lesson": report.get("concept", {}).get("title", ""),
+
+    "terms": [
+        item.get("name", "")
+        for item in report.get("terms", [])
+    ],
+
+    "question": report.get("question", {}).get("prompt", ""),
+
+    "macro_topics": [
+        item.get("title", "")
+        for item in report.get("macro", [])
+    ],
+
+    "market_topics": [
+        item.get("title", "")
+        for item in report.get("market_flashes", [])
+    ],
+
+    "path": f"data/history/{report_date}.json",
+})
             if report_date not in knowledge["reports"]:
                 knowledge["reports"].append(report_date)
             knowledge["recent_paths"] = ([report["knowledge_path"]] + knowledge.get("recent_paths", []))[:30]
