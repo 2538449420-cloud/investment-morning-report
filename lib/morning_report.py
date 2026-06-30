@@ -223,16 +223,35 @@ def news_windows(report_date: str) -> tuple[datetime, datetime, datetime]:
 
 def filter_news_for_report_date(news: list[dict[str, Any]], report_date: str) -> dict[str, Any]:
     macro_start, flash_start, flash_end = news_windows(report_date)
-    macro_candidates: list[dict[str, Any]] = []
-    flash_candidates: list[dict[str, Any]] = []
-    for item in news:
-        published = parse_bjt_datetime(item.get("published_at"))
-        if not published:
-            continue
-        if macro_start <= published < flash_end:
-            macro_candidates.append(item)
-        if flash_start <= published < flash_end:
-            flash_candidates.append(item)
+    flash_window_mode = "strict_08_to_08"
+
+    def collect_between(start: datetime, end: datetime) -> list[dict[str, Any]]:
+        candidates: list[dict[str, Any]] = []
+        for item in news:
+            published = parse_bjt_datetime(item.get("published_at"))
+            if published and start <= published < end:
+                candidates.append(item)
+        candidates.sort(key=lambda item: (int(item.get("importance", 1)), item.get("published_at", "")), reverse=True)
+        return candidates
+
+    macro_candidates = collect_between(macro_start, flash_end)
+    flash_candidates = collect_between(flash_start, flash_end)
+
+    # GitHub Actions 可能延迟，手动补偿也常在当天08:00后才运行。
+    # 此时RSS经常只保留更晚的新闻，严格08:00窗口会缺快讯。
+    # 若是当天晨报且严格窗口不足，则降级为“最近24小时”快讯窗口，保证补偿任务可生成。
+    current = now_bjt()
+    if len(flash_candidates) < 2 and report_date == current.date().isoformat():
+        fallback_end = current
+        fallback_start = current - timedelta(hours=24)
+        fallback_macro_start = fallback_end - timedelta(days=5)
+        fallback_flash = collect_between(fallback_start, fallback_end)
+        fallback_macro = collect_between(fallback_macro_start, fallback_end)
+        if len(fallback_flash) >= 2 and len(fallback_macro) >= 5:
+            flash_start, flash_end, macro_start = fallback_start, fallback_end, fallback_macro_start
+            flash_candidates, macro_candidates = fallback_flash, fallback_macro
+            flash_window_mode = "fallback_recent_24h"
+
     macro_candidates.sort(key=lambda item: (int(item.get("importance", 1)), item.get("published_at", "")), reverse=True)
     flash_candidates.sort(key=lambda item: (int(item.get("importance", 1)), item.get("published_at", "")), reverse=True)
     if len(macro_candidates) < 5:
@@ -246,6 +265,7 @@ def filter_news_for_report_date(news: list[dict[str, Any]], report_date: str) ->
             "macro_start_bjt": macro_start.isoformat(),
             "flash_start_bjt": flash_start.isoformat(),
             "flash_end_bjt": flash_end.isoformat(),
+            "flash_window_mode": flash_window_mode,
         },
     }
 
@@ -613,7 +633,7 @@ def build_generation_prompt(report_date: str, news: list[dict[str, str]], case: 
 你没有联网工具。以下“新闻候选”“公司资料”和“历史学习台账”是唯一允许使用的事实来源：
 - sources中的新闻URL必须逐字复制新闻候选中的URL；不得自行创造或改写URL。
 - 公司案例只能使用指定公司资料；没有数字就不要编数字，metrics可以为空数组。
-- market_flashes只能使用“严格快讯候选”；这些新闻已经由Python按北京时间昨日08:00至今日08:00过滤。
+- market_flashes只能使用“快讯候选”。默认按北京时间昨日08:00至今日08:00过滤；若新闻窗口标记为fallback_recent_24h，表示补偿运行时严格窗口新闻不足，Python已改用最近24小时候选。
 - macro只能使用“宏观候选”；这些新闻允许回溯最近3—5天。
 - 新闻不足以支持某个结论时，明确写“不确定”，不要补写想象内容。
 - 课程不能重复昨天或近期课程的学习价值。不能只是换标题、换新闻、换公司，但仍然讲同一个lesson。
