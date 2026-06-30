@@ -39,6 +39,7 @@ def main() -> None:
     current = now_bjt()
     start_date = date.fromisoformat(os.getenv("HISTORY_START_DATE", "2026-06-21"))
     max_reports = max(1, min(int(os.getenv("MAX_REPORTS_PER_RUN", "2")), 3))
+    regenerate_days = max(0, min(int(os.getenv("REGENERATE_RECENT_DAYS", "0")), 7))
     history_file = DATA_DIR / "history.json"
     history = json.loads(history_file.read_text(encoding="utf-8")) if history_file.exists() else {"reports": []}
     reports = expand_history_reports(history.get("reports", []))
@@ -51,14 +52,20 @@ def main() -> None:
         if cursor.isoformat() not in known_dates:
             missing_dates.append(cursor.isoformat())
         cursor += timedelta(days=1)
+    regenerate_dates = [
+        (current.date() - timedelta(days=offset)).isoformat()
+        for offset in range(regenerate_days)
+        if current.date() - timedelta(days=offset) >= start_date
+    ]
     # 严格新闻窗口依赖RSS仍保留对应日期新闻。太久以前的缺口无法可靠补写，
     # 否则会为了补历史而污染“今日快讯”的时效性。
     oldest_reliable = current.date() - timedelta(days=1)
-    targets = [
+    target_pool = [
         item
-        for item in missing_dates
+        for item in [*regenerate_dates, *missing_dates]
         if date.fromisoformat(item) >= oldest_reliable
     ]
+    targets = list(dict.fromkeys(target_pool))
     # 优先生成今天，避免昨天缺口因为RSS窗口不足而挡住今日晨报。
     targets = sorted(targets, reverse=True)[:max_reports]
     if not targets:
