@@ -71,6 +71,16 @@ DEFAULT_KNOWLEDGE_MAP = {
     "公司分析": ["商业模式", "收入来源", "成本结构", "利润来源", "客户结构", "供应链", "竞争优势", "生命周期", "管理层", "股东回报", "回购", "分红", "产业补贴"],
 }
 
+MODULE_ALIASES = {
+    "市场与交易": "市场行为",
+    "宏观环境": "宏观经济",
+    "公司经营与商业模式": "商业模式",
+    "财务报表": "财务分析",
+    "估值方法": "估值",
+    "投资工具与资产类别": "投资方法",
+    "风险与决策": "市场行为",
+}
+
 KNOWLEDGE_PLAYBOOK = {
     "AI": ["AI", "半导体", "云计算", "软件", "CapEx", "折旧", "ROIC", "自由现金流", "客户结构", "网络效应"],
     "芯片": ["半导体", "CapEx", "折旧", "毛利率", "存货周转", "成本结构", "供应链", "周期"],
@@ -549,6 +559,37 @@ def flatten_knowledge_map(knowledge_map: Optional[dict[str, Any]] = None) -> dic
     }
 
 
+def infer_module_for_knowledge(name: str) -> str:
+    text = name.lower()
+    rules = [
+        ("商业模式", r"网络效应|支付|平台|saas|订阅|粘性|品牌|定价权|护城河|规模效应"),
+        ("估值", r"pe|pb|ps|peg|dcf|ev|估值|安全边际|内在价值|市值|企业价值"),
+        ("财务分析", r"roe|roic|roa|eps|现金流|收入|成本|毛利|净利|折旧|capex|应收|存货"),
+        ("行业分析", r"ai|芯片|半导体|银行|消费|医药|能源|新能源|地产|航空|汽车|云计算|软件|电商|游戏"),
+        ("宏观经济", r"gdp|cpi|ppi|pmi|利率|汇率|通胀|通缩|流动性|财政|货币|国债"),
+        ("市场行为", r"预期差|风险偏好|市场情绪|周期|beta|alpha|波动|回撤|杠杆"),
+        ("投资方法", r"价值投资|成长投资|指数投资|资产配置|分散|定投|dca|夏普|风险收益"),
+        ("公司分析", r"商业模式|收入来源|利润来源|客户结构|供应链|竞争优势|生命周期|管理层|回购|分红"),
+    ]
+    for module, pattern in rules:
+        if re.search(pattern, text, re.I):
+            return module
+    return ""
+
+
+def normalize_knowledge_module(module: str, knowledge_name: str = "") -> str:
+    knowledge_map = load_knowledge_map()
+    modules = set((knowledge_map.get("modules", {}) or {}).keys())
+    if module in modules:
+        return module
+    inferred = infer_module_for_knowledge(knowledge_name)
+    if inferred in modules:
+        return inferred
+    if module in MODULE_ALIASES:
+        return MODULE_ALIASES[module]
+    return module
+
+
 def days_since(date_text: str, report_date: str) -> int:
     if not date_text:
         return 999
@@ -641,6 +682,7 @@ def build_generation_prompt(report_date: str, news: list[dict[str, str]], case: 
 - 新闻提供时效性，知识提供成长性，两者同等重要；任何一项缺失，都不是合格晨报。
 - Knowledge Map是优先参考的知识空间，不是封闭边界、也不是固定课程表。
 - 优先从Knowledge Map中选择知识点。如果今日重大新闻涉及Knowledge Map尚未覆盖的新知识，可以新增知识点，但必须归属到现有模块，并尽量避免与历史知识重复。
+- knowledge_path.module必须优先使用Knowledge Map中的新模块名，例如“商业模式”“市场行为”“财务分析”；不要继续使用旧模块名，例如“风险与决策”“公司经营与商业模式”。
 - 多个知识都合适时，按以下优先级选择：①与今日新闻联系最紧密；②历史覆盖较少；③更能帮助投资者建立长期认知；④与最近几天课程差异更大。
 - 今日知识候选只是Python根据新闻主题和历史覆盖给出的参考，不是强制主课。
 - 如果同一主题再次出现，必须推进一层，例如从定义推进到适用边界、失效条件、财务影响或估值影响。
@@ -752,7 +794,8 @@ def validate_knowledge_choice(report: dict[str, Any]) -> list[str]:
     if not chosen:
         return ["缺少今日知识节点：concept.title和knowledge_path.today不能同时为空"]
     is_existing = any(text_similarity(chosen, node) >= 0.72 or text_similarity(concept_title, node) >= 0.72 for node in allowed)
-    if not is_existing and module not in modules:
+    normalized_module = normalize_knowledge_module(module, chosen)
+    if not is_existing and normalized_module not in modules:
         return [f"新增知识点必须归属到Knowledge Map现有模块：today={today}，module={module}"]
     return []
 
@@ -766,9 +809,11 @@ def pending_knowledge_from_report(report: dict[str, Any], report_date: str) -> O
         return None
     if any(text_similarity(today, node) >= 0.72 or text_similarity(concept_title, node) >= 0.72 for node in allowed):
         return None
+    normalized_module = normalize_knowledge_module(path.get("module", "待归类"), today)
     return {
         "name": today,
-        "module": path.get("module", "待归类"),
+        "module": normalized_module,
+        "original_module": path.get("module", ""),
         "first_seen": report_date,
         "source": "ai_generated_report",
         "reason": "AI在今日重大新闻中选择了Knowledge Map尚未覆盖的新知识点，需人工审核是否加入正式地图。",
