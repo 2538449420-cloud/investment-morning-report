@@ -1,0 +1,207 @@
+{
+  "report_date": "2026-07-26",
+  "theme": "风险偏好：市场情绪的晴雨表",
+  "summary": "今日市场受全球油价飙升和通胀担忧影响承压，但北京智能经济政策与消费数据提供局部支撑。投资者需理解风险偏好如何驱动资产价格，并学会识别市场情绪的变化信号。",
+  "macro": [
+    {
+      "region": "全球",
+      "title": "油价飙升与通胀担忧施压全球市场",
+      "summary": "2026年7月24日，全球市场因油价飙升、通胀担忧加剧和地缘政治紧张而承压。",
+      "why_it_matters": "油价上涨推高通胀预期，可能迫使央行维持紧缩政策，压制风险资产估值。",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "region": "中国",
+      "title": "北京智能经济政策推动AI产业化",
+      "summary": "2026年7月25日，北京市委书记尹力调研智能经济，强调将AI优势转化为经济发展效能。",
+      "why_it_matters": "政策支持为AI产业链提供增长动力，但需关注政策落地节奏与市场预期差。",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "region": "中国",
+      "title": "北京服务性消费同比增长4.5%",
+      "summary": "2026年7月25日，北京上半年服务性消费额同比增长4.5%，显示消费韧性。",
+      "why_it_matters": "消费数据支撑经济复苏预期，但持续性需观察居民收入与就业改善。",
+      "source_ids": [
+        "s3"
+      ]
+    }
+  ],
+  "market_flashes": [
+    {
+      "time_bjt": "09:08",
+      "title": "北京市委书记调研智能经济，强调AI产业化",
+      "summary": "尹力在朝阳区、海淀区调研时指出，要推动人工智能技术优势转化为经济发展效能。",
+      "beneficiaries": [
+        "AI芯片",
+        "云计算",
+        "智能体"
+      ],
+      "pressured": [
+        "传统制造业"
+      ],
+      "watch_point": "政策利好是否已被市场提前定价？",
+      "source_ids": [
+        "s2"
+      ]
+    },
+    {
+      "time_bjt": "10:24",
+      "title": "北京上半年服务性消费同比增长4.5%",
+      "summary": "消费数据发布，显示服务性消费链条复苏。",
+      "beneficiaries": [
+        "消费服务",
+        "旅游",
+        "餐饮"
+      ],
+      "pressured": [
+        "可选消费"
+      ],
+      "watch_point": "消费复苏是否可持续？需关注后续月度数据。",
+      "source_ids": [
+        "s3"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "name": "风险偏好",
+      "english": "Risk Appetite",
+      "definition": "投资者愿意承担风险的程度，通常反映在资金流向高风险资产（如股票）与低风险资产（如国债）的配置上。",
+      "connection": "风险偏好是市场情绪的量化指标，直接影响资产价格。当风险偏好上升时，资金涌入股市推高估值；下降时，资金流向避险资产。"
+    },
+    {
+      "name": "避险资产",
+      "english": "Safe Haven Assets",
+      "definition": "在市场动荡或经济衰退时，投资者倾向于持有的保值资产，如黄金、美国国债、日元等。",
+      "connection": "风险偏好下降时，避险资产需求上升，价格走高。"
+    },
+    {
+      "name": "风险溢价",
+      "english": "Risk Premium",
+      "definition": "投资者因承担额外风险而要求的超出无风险利率的回报。",
+      "connection": "风险偏好越低，风险溢价越高，股票估值受压。"
+    },
+    {
+      "name": "市场情绪",
+      "english": "Market Sentiment",
+      "definition": "投资者对市场未来走势的整体态度和预期，常通过波动率指数（VIX）、资金流向等指标衡量。",
+      "connection": "市场情绪是风险偏好的直接体现，情绪乐观时风险偏好高，悲观时低。"
+    },
+    {
+      "name": "预期差",
+      "english": "Expectation Gap",
+      "definition": "实际结果与市场一致预期之间的差异，是股价波动的核心驱动力。",
+      "connection": "风险偏好影响市场对预期差的反应程度：高偏好时，正面预期差被放大；低偏好时，负面预期差被放大。"
+    }
+  ],
+  "concept": {
+    "title": "风险偏好：市场情绪的晴雨表",
+    "question": "为什么油价飙升时，科技股往往下跌？",
+    "explanation": [
+      "油价飙升推高通胀预期，市场担心央行加息，导致无风险利率上升。根据DCF模型，折现率提高会压低股票内在价值。同时，通胀侵蚀企业利润，投资者风险偏好下降，要求更高的风险溢价，进一步压低估值。",
+      "风险偏好是连接宏观事件与资产价格的关键桥梁。当风险偏好下降时，资金从高估值科技股流向防御性板块或避险资产。投资者应关注VIX指数、信用利差等指标，判断市场情绪是否过度悲观或乐观。"
+    ],
+    "formula": {
+      "name": "风险偏好与估值的关系",
+      "expression": "股票估值 = 预期现金流 / (无风险利率 + 风险溢价)",
+      "example": "假设无风险利率从2%升至3%，风险溢价从4%升至5%，则折现率从6%升至8%，在其他条件不变时，估值下降约25%。",
+      "limitation": "该公式假设风险溢价独立于无风险利率，实际中两者可能相关。"
+    },
+    "counterexample": "2020年疫情初期，风险偏好骤降，但科技股因受益于居家办公反而上涨，说明风险偏好并非唯一因素，行业基本面同样重要。"
+  },
+  "company_case": {
+    "company": "NVIDIA",
+    "topic": "芯片需求高速增长时，护城河来自哪里，周期风险又藏在哪里？",
+    "business_model": "NVIDIA销售GPU、网络产品及系统，并通过CUDA软件生态锁定开发者。客户付费不仅为芯片算力，更为软硬件协同与部署效率。",
+    "customers_pay_because": "CUDA生态降低迁移成本，软硬件集成提升AI训练与推理效率，客户愿意支付溢价。",
+    "revenue_profit_cash": "收入来自数据中心、游戏、专业可视化等；利润受规模效应和定价权支撑；自由现金流强劲，但需持续高额资本开支维持领先。",
+    "advantages": [
+      "软硬件生态",
+      "开发者工具积累",
+      "规模与研发投入",
+      "高性能计算品牌"
+    ],
+    "weaknesses": [
+      "半导体周期",
+      "客户集中",
+      "供应链依赖",
+      "出口限制与竞争"
+    ],
+    "metrics": [],
+    "failure_conditions": [
+      "客户大规模转向自研芯片",
+      "AI资本开支回报低于预期",
+      "软件生态优势被替代"
+    ],
+    "valuation_boundary": "当前估值隐含极高增长预期，若风险偏好下降或AI资本开支放缓，估值可能大幅回调。"
+  },
+  "question": {
+    "prompt": "根据风险偏好的概念，以下哪项最可能表明市场风险偏好正在下降？",
+    "options": [
+      {
+        "id": "A",
+        "text": "科技股资金流入增加，国债收益率上升"
+      },
+      {
+        "id": "B",
+        "text": "黄金价格上涨，同时高收益债券利差扩大"
+      },
+      {
+        "id": "C",
+        "text": "VIX指数下降，新兴市场货币走强"
+      },
+      {
+        "id": "D",
+        "text": "原油价格下跌，消费股领涨"
+      }
+    ],
+    "answer": "B",
+    "explanation": "黄金作为避险资产价格上涨，同时高收益债券利差扩大（风险溢价上升），均表明投资者避险情绪升温，风险偏好下降。"
+  },
+  "knowledge_path": {
+    "module": "市场行为",
+    "parent": "市场情绪",
+    "nodes": [
+      "风险偏好",
+      "避险资产",
+      "风险溢价",
+      "市场情绪",
+      "预期差"
+    ],
+    "today": "风险偏好"
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "publisher": "India Infoline",
+      "title": "Global Markets Under Pressure as Oil Prices Surge, Inflation Fears Rise and Geopolitical Tensions Escalate - India Infoline",
+      "published_at": "2026-07-24T22:43:05+08:00",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOYlZoa0VKX2YyQnlxTjkyU1lvZktzRkNpY25lWlZpUlVPOEZYc1BuZG5rQXpfS3hhQXZ5dk5fclc2RnpFSld4QW1Kc3laTS1PX043eW5HaUt0THpjUzFDbkt0eUVJc1NSRUlDeW1FVXJFQlJmUUYtTVZKVzlteWRkR2FTLTM1bXgzVE1JSFBRX2loQ2g5Q2REWnFfbW9BRE1FVmhrdUdOM3hpdU1ZVkVHZ1d5Sk9MbTk3QXRNVFBMMkFpeGNNWExKekJzMkZuV09jSHY5V0NLNFZwZzM0RFR4dHBjQ3BpUVlRRHc?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "s2",
+      "publisher": "北京市人民政府",
+      "title": "尹力在朝阳区海淀区调研智能经济发展时强调推动人工智能技术优势转化为经济发展效能为构建体现北京特色的现代化产业体系注入强劲动能殷勇一同调研_领导活动_首都之窗 - 北京市人民政府",
+      "published_at": "2026-07-25T09:08:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBDV3NCRXVrdS1uTURzbGNIRVRIOWx6bC11N1FBZDd0VWNkZkNENFBPVzVsc1B6ZVZ5MzJIenJnalVsSHlIdmVfeTBlNDd6Y3Nkc3FmNVVJWHVYSXJuMmZfRzBXWFZqTmNMVWkwa3pJdTF0TUlvUm4tMQ?oc=5",
+      "source_type": "primary"
+    },
+    {
+      "id": "s3",
+      "publisher": "北京市人民政府",
+      "title": "2026年上半年北京市服务性消费额同比增长4.5% 小小票根撬动消费新链条 - 北京市人民政府",
+      "published_at": "2026-07-25T10:24:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQl9saFRMVElQcDBISWpKSUFvVGNIckk0T0k0aTNxbWZWb0FOaU5YRkxESnJCX1NNNlVwUVhrSmp1NEwxdkpZOVRVLXBCUkYwMlhEajYzUVc5QW55UlRDaTJhTXRZUVF2UVc5Z2lsdDA4V2VnR21Jb29yN1BlYU56Yg?oc=5",
+      "source_type": "primary"
+    }
+  ],
+  "disclaimer": "本文用于投资知识学习和信息交流，不构成任何投资建议。",
+  "generated_at": "2026-07-27T12:09:45.115863+08:00",
+  "published_at": "2026-07-27T12:10:38.953067+08:00"
+}
