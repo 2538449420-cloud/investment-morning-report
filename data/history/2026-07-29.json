@@ -1,0 +1,223 @@
+{
+  "report_date": "2026-07-29",
+  "theme": "AI资本开支周期中的折旧压力：当算力投资开始侵蚀利润",
+  "summary": "隔夜纳斯达克期货下跌，AI芯片股抛售加深，市场对即将到来的科技巨头财报持谨慎态度。中国商务部就产能过剩问题阐明立场，北京经开区首个AI实验室落地。投资者今日应关注：AI资本开支高速增长背后，折旧费用如何影响利润表，以及为何高资本开支不一定带来高回报。",
+  "macro": [
+    {
+      "region": "美国",
+      "title": "纳斯达克期货下跌，AI芯片担忧加剧",
+      "summary": "2026-07-28 17:02，纳斯达克期货下跌，因AI芯片担忧在大型科技公司财报前加重。市场对AI资本开支回报的质疑升温。",
+      "why_it_matters": "AI芯片股是市场情绪的风向标，期货下跌预示财报季可能不及预期，影响全球科技股估值。",
+      "source_ids": [
+        "n40"
+      ]
+    },
+    {
+      "region": "中国",
+      "title": "商务部就产能过剩问题阐明中方立场",
+      "summary": "2026-07-28 13:13，商务部发布关于所谓“产能过剩”问题的中方立场文件，回应国际关切。",
+      "why_it_matters": "产能过剩争议影响新能源、制造业等行业的出口预期和贸易政策，投资者需关注相关行业风险。",
+      "source_ids": [
+        "n80"
+      ]
+    },
+    {
+      "region": "中国",
+      "title": "北京经开区首个市场监管AI实验室落地",
+      "summary": "2026-07-28 08:53，北京经开区首个市场监管“黑灯”AI实验室正式运行，小机器人24小时连轴转，效率大幅提升。",
+      "why_it_matters": "AI在政务领域的应用加速，显示政策对AI产业的支持力度，利好AI应用和自动化相关公司。",
+      "source_ids": [
+        "n88"
+      ]
+    }
+  ],
+  "market_flashes": [
+    {
+      "time_bjt": "17:02",
+      "title": "纳斯达克期货下跌，AI芯片担忧加剧",
+      "summary": "纳斯达克期货下跌，因AI芯片担忧在大型科技公司财报前加重。市场对AI资本开支回报的质疑升温。",
+      "beneficiaries": [
+        "防御性板块",
+        "公用事业"
+      ],
+      "pressured": [
+        "AI芯片股",
+        "半导体",
+        "大型科技公司"
+      ],
+      "watch_point": "市场是否已过度反应？若财报超预期，可能反弹。",
+      "source_ids": [
+        "n40"
+      ]
+    },
+    {
+      "time_bjt": "13:13",
+      "title": "商务部就产能过剩问题阐明中方立场",
+      "summary": "商务部发布关于所谓“产能过剩”问题的中方立场文件，回应国际关切。",
+      "beneficiaries": [
+        "新能源",
+        "制造业"
+      ],
+      "pressured": [
+        "出口导向型企业"
+      ],
+      "watch_point": "市场是否已消化贸易摩擦风险？需关注后续关税政策。",
+      "source_ids": [
+        "n80"
+      ]
+    },
+    {
+      "time_bjt": "08:53",
+      "title": "北京经开区首个市场监管AI实验室落地",
+      "summary": "北京经开区首个市场监管“黑灯”AI实验室正式运行，小机器人24小时连轴转，效率大幅提升。",
+      "beneficiaries": [
+        "AI应用",
+        "自动化设备",
+        "机器人"
+      ],
+      "pressured": [
+        "传统人工密集型服务"
+      ],
+      "watch_point": "AI政务应用加速，但商业化落地仍需时间。",
+      "source_ids": [
+        "n88"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "name": "折旧",
+      "english": "Depreciation",
+      "definition": "固定资产在使用过程中因磨损、老化或技术过时而逐渐转移的价值，在利润表中作为费用扣除。",
+      "connection": "AI芯片公司如NVIDIA拥有大量固定资产（生产设备、数据中心），折旧费用随资本开支增加而上升，侵蚀净利润。"
+    },
+    {
+      "name": "资本开支",
+      "english": "Capital Expenditure (CapEx)",
+      "definition": "企业用于购买、维护或升级固定资产（如设备、厂房）的支出，不直接计入当期费用，而是通过折旧逐年分摊。",
+      "connection": "AI公司大规模投资GPU和数据中心，资本开支高企，未来折旧压力将影响利润。"
+    },
+    {
+      "name": "自由现金流",
+      "english": "Free Cash Flow (FCF)",
+      "definition": "经营现金流减去资本开支，代表企业可自由分配给股东或再投资的现金。",
+      "connection": "高资本开支会压缩自由现金流，即使利润增长，也可能无法产生足够现金用于分红或回购。"
+    },
+    {
+      "name": "资本开支回报率",
+      "english": "Return on Invested Capital (ROIC)",
+      "definition": "衡量企业每投入一单位资本能产生多少税后利润，是评估资本使用效率的核心指标。",
+      "connection": "AI公司若资本开支增速远超利润增速，ROIC将下降，表明投资效率降低。"
+    },
+    {
+      "name": "折旧与摊销",
+      "english": "Depreciation & Amortization (D&A)",
+      "definition": "折旧针对有形资产，摊销针对无形资产（如软件、专利），两者都是非现金费用，但减少账面利润。",
+      "connection": "AI公司大量投资软件和芯片设计，摊销费用同样影响利润，需关注D&A占收入比。"
+    }
+  ],
+  "concept": {
+    "title": "折旧如何影响AI公司的利润表？",
+    "question": "当一家AI芯片公司资本开支翻倍，折旧费用随之上升，但收入增长滞后，对净利润有何影响？",
+    "explanation": [
+      "折旧是资本开支的“分期付款”。假设NVIDIA在2025年投资100亿美元建设新数据中心，这些资产按5年直线折旧，每年折旧20亿美元。这笔费用会从利润中扣除，即使没有实际现金流出。",
+      "如果收入增长不足以覆盖新增折旧，净利润增速将放缓甚至下降。例如，若收入仅增长10%，而折旧增长50%，净利率必然承压。投资者需关注折旧占收入比的变化。"
+    ],
+    "formula": {
+      "name": "折旧对净利润的影响",
+      "expression": "净利润 = 收入 - 成本 - 折旧 - 其他费用",
+      "example": "假设收入100亿，成本60亿，折旧10亿，其他费用10亿，净利润20亿。若折旧增至20亿，其他不变，净利润降至10亿。",
+      "limitation": "折旧是非现金费用，不影响现金流，但降低账面利润，可能影响估值（如PE升高）。"
+    },
+    "counterexample": "如果折旧资产能产生更高收入（如新GPU出租带来更多算力收入），则折旧压力可被收入增长抵消。"
+  },
+  "company_case": {
+    "company": "NVIDIA",
+    "topic": "芯片需求高速增长时，护城河来自哪里，周期风险又藏在哪里？",
+    "business_model": "NVIDIA销售GPU、网络产品及相关系统，并通过CUDA软件生态降低开发者迁移意愿。客户付费不仅为了芯片算力，也为了软硬件协同、开发工具和部署效率。",
+    "customers_pay_because": "客户需要高性能计算能力来训练AI模型，NVIDIA的GPU+CUDA生态提供最佳性价比和开发效率，迁移成本高。",
+    "revenue_profit_cash": "收入来自芯片销售和数据中心服务；利润受毛利率和运营费用影响；现金流需扣除大量资本开支（如建设数据中心）。",
+    "advantages": [
+      "软硬件生态",
+      "开发者工具积累",
+      "规模与研发投入",
+      "高性能计算品牌"
+    ],
+    "weaknesses": [
+      "半导体周期",
+      "客户集中",
+      "供应链依赖",
+      "出口限制与竞争"
+    ],
+    "metrics": [],
+    "failure_conditions": [
+      "客户大规模转向自研芯片",
+      "AI资本开支回报低于预期",
+      "软件生态优势被替代"
+    ],
+    "valuation_boundary": "若折旧费用持续上升而收入增速放缓，PE可能扩张（利润下降），但自由现金流可能仍健康，需用EV/EBITDA等指标辅助估值。"
+  },
+  "question": {
+    "prompt": "根据折旧对利润的影响，以下哪项最可能表明NVIDIA的资本开支正在侵蚀利润？",
+    "options": [
+      {
+        "id": "A",
+        "text": "收入增长50%，折旧增长30%，净利润增长40%"
+      },
+      {
+        "id": "B",
+        "text": "收入增长20%，折旧增长50%，净利润增长5%"
+      },
+      {
+        "id": "C",
+        "text": "收入增长30%，折旧增长20%，净利润增长35%"
+      },
+      {
+        "id": "D",
+        "text": "收入增长10%，折旧增长10%，净利润增长10%"
+      }
+    ],
+    "answer": "B",
+    "explanation": "选项B中折旧增速远超收入增速，导致净利润增速远低于收入增速，表明折旧压力正在侵蚀利润。"
+  },
+  "knowledge_path": {
+    "module": "财务分析",
+    "parent": "资本开支周期",
+    "nodes": [
+      "资本开支",
+      "折旧",
+      "自由现金流",
+      "ROIC"
+    ],
+    "today": "折旧"
+  },
+  "sources": [
+    {
+      "id": "n40",
+      "publisher": "Modern Diplomacy",
+      "title": "Nasdaq Futures Fall as AI Chip Concerns Weigh Ahead of Big Tech Earnings - Modern Diplomacy",
+      "published_at": "2026-07-28T17:02:18+08:00",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxONlY5SjYzYVA3M0VTQXJ5bHc1OWJpeHBqa0xUQ1ZuWUxSZWFHRHZ4TVVfUFByX01rTW5Ha2xDeWJINkJDWFRhbDNXQ0dvQjhmRC0yMThwMWlSbHVlZGRFbE1PTUxkbDN0VVNQWklER1ZPOU9GYjNqZ3I0bEx6ZHBxOFg5MGdhZ0xXVzEwOWVoNXpZcmRSQzZ4UThfTk9JMXUxdkU0ajBuRlc4OEtyTTYyRQ?oc=5",
+      "source_type": "mainstream"
+    },
+    {
+      "id": "n80",
+      "publisher": "mofcom.gov.cn",
+      "title": "关于所谓“产能过剩”问题的中方立场 - mofcom.gov.cn",
+      "published_at": "2026-07-28T13:13:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUkRwQ1N5YjVpZG9ZREY1VVhrUmd6QkIxN3E4UzJrVUcwbVFYamxBWWhUZ0NCZmozLUxPS2lzWjNEdXBFY3JWbno3a1h5amI3ZkFqNy1RMmt1cEVsNjBYZnBHTW00ZUluVURqT2F1UnhjNkxNQl9pQ1R1N001cXJJT0RGYloxelpSQ3dVRkxjRFN0Zw?oc=5",
+      "source_type": "primary"
+    },
+    {
+      "id": "n88",
+      "publisher": "北京市人民政府",
+      "title": "小机器人24小时连轴转 一天干完俩人半个月的活儿 本市首个市场监管“黑灯”AI实验室落地 - 北京市人民政府",
+      "published_at": "2026-07-28T08:53:00+08:00",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBqU3lHZEZZRTRBczlfQVZZWm1UX2JDU0hwZWdzWFI0LVVYc25FV0YtMzVWSTd0eVZ0SElVT1FEOXBQeTkySTVTTERpSHFnYlQ4YXBlbW1KRzdDYXdXVDQwRkkwTG9uTjcyaThBTWI0YU9uSWpQ?oc=5",
+      "source_type": "primary"
+    }
+  ],
+  "disclaimer": "本文用于投资知识学习和信息交流，不构成任何投资建议。",
+  "generated_at": "2026-07-30T08:59:05.528148+08:00",
+  "published_at": "2026-07-30T09:01:18.222088+08:00"
+}
